@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "settings": {
+    "spacing": {
+      "blockGap": true
+    }
+  },
+  "styles": {
+    "spacing": {
+      "blockGap": "30px"
+    },
+    "blocks": {
+      "core/columns": {
+        "spacing": {
+          "blockGap": "20px"
+        }
+      }
+    }
+  },
+  "templateParts": [
+    {
+      "name": "header",
+      "title": "Header",
+      "area": "header"
+    },
+    {
+      "name": "footer",
+      "title": "Footer",
+      "area": "footer"
+    }
+  ]
+}
