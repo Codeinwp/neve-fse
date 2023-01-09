@@ -6,6 +6,16 @@
     }
   },
   "styles": {
+    "elements": {
+      "link": {
+          "color": {
+            "text": "var(--nv-secondary-accent)"
+          },
+        "typography": {
+          "textDecoration": "none"
+        }
+      }
+    },
     "spacing": {
       "blockGap": "30px"
     },
