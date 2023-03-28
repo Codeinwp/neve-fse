@@ -1,4 +1,4 @@
-/* global NeveFSEData, jQuery */
+/* global neveFSEData, jQuery */
 
 import { installPlugin, activatePlugin } from './common/plugin-install';
 
@@ -11,7 +11,7 @@ function handleWelcomeNotice( $ ) {
 		ajaxUrl,
 		nonce,
 		otterStatus,
-	} = NeveFSEData;
+	} = neveFSEData;
 
 	const installBtn = $( '.neve-fse-welcome-notice #neve-fse-install-otter' );
 	const dismissBtn = $( '.neve-fse-welcome-notice .notice-dismiss' );

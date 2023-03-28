@@ -36,6 +36,12 @@ class Assets_Manager {
 		wp_register_style( $handle, esc_url( $uri ), $dependencies, NEVE_FSE_VERSION );
 		wp_style_add_data( $handle, 'rtl', 'replace' );
 		wp_enqueue_style( $handle );
+
+		// Add the inherited values from Neve.
+		$inherited_style_values = self::get_inherited_style_values();
+		if ( ! empty( $inherited_style_values ) ) {
+			wp_add_inline_style( $handle, $inherited_style_values );
+		}
 	}
 
 	/**
@@ -83,5 +89,84 @@ class Assets_Manager {
 	 */
 	public static function get_image_url( string $file ): string {
 		return NEVE_FSE_URL . 'assets/img/' . $file;
+	}
+
+
+	/**
+	 * Get the CSS variables from Neve and add them to the style.
+	 *
+	 * @return string
+	 */
+	public static function get_inherited_style_values() {
+		$css = '';
+
+		$color_vars = self::get_css_color_vars();
+		if ( ! empty( $color_vars ) ) {
+			$css .= ':root{' . $color_vars . '}';
+		}
+		return $css;
+	}
+
+	/**
+	 * Get the value of a mod from Neve.
+	 *
+	 * @param string $name Mod name.
+	 * @param mixed  $default Default value.
+	 *
+	 * @return mixed
+	 */
+	private static function get_mod_from_neve( $name, $default = false ) {
+		$value     = $default;
+		$neve_mods = get_option( 'theme_mods_neve' );
+
+		if ( false === $neve_mods ) {
+			return $value;
+		}
+
+		if ( ! isset( $neve_mods[ $name ] ) ) {
+			return $value;
+		}
+
+		$value = apply_filters( "theme_mod_{$name}", $neve_mods[ $name ] );
+
+		return $value;
+	}
+
+	/**
+	 * Get the CSS variables for the colors from Neve.
+	 *
+	 * @return string
+	 */
+	private static function get_css_color_vars() {
+		$global_colors = self::get_mod_from_neve( 'neve_global_colors', array() );
+
+		if ( empty( $global_colors ) ) {
+			return '';
+		}
+
+		if ( ! isset( $global_colors['activePalette'] ) ) {
+			return '';
+		}
+
+		$active = $global_colors['activePalette'];
+
+		if ( ! isset( $global_colors['palettes'][ $active ] ) ) {
+			return '';
+		}
+
+		$palette = $global_colors['palettes'][ $active ];
+
+		if ( ! isset( $palette['colors'] ) ) {
+			return '';
+		}
+
+		$css = '';
+
+		foreach ( $palette['colors'] as $slug => $color ) {
+			$css .= '--' . $slug . ':' . $color . ';';
+		}
+
+
+		return $css;
 	}
 }

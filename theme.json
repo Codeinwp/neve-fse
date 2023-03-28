@@ -6,32 +6,32 @@
       "palette": [
         {
           "slug": "ti-bg",
-          "color": "#FFFFFF",
+          "color": "var(--nv-site-bg, #FFFFFF)",
           "name": "Background"
         },
         {
           "slug": "ti-fg",
-          "color": "#202020",
+          "color": "var(--nv-text-color, #202020)",
           "name": "Foreground"
         },
         {
           "slug": "ti-bg-alt",
-          "color": "#EDEAE4",
+          "color": "var(--nv-light-bg, #EDEAE4)",
           "name": "Background Alt"
         },
         {
           "slug": "ti-bg-inv",
-          "color": "#1A1919",
+          "color": "var(--nv-dark-bg, #1A1919)",
           "name": "Background Dark"
         },
         {
           "slug": "ti-fg-alt",
-          "color": "#FBFBFB",
+          "color": "var(--nv-text-dark-bg, #FBFBFB)",
           "name": "Foreground Alt"
         },
         {
           "slug": "ti-accent",
-          "color": "#435DEB",
+          "color": "var(--nv-primary-accent, #435DEB)",
           "name": "Accent"
         }
       ],
