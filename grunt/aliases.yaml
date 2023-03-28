@@ -1,0 +1,15 @@
+build:
+# Transpile SCSS
+- 'sass'
+# PostCSS
+- 'postcss'
+# RTL CSS
+- 'rtlcss'
+# Add TextDomain.
+- 'addtextdomain'
+
+# Version:
+#         1. grunt version::patch
+#         2. grunt generate
+#         3. commit & push for version update
+#         4. zip & upload to wordpress.org

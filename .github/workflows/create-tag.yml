@@ -1,0 +1,56 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  create_tag:
+    runs-on: ubuntu-latest
+    if: "! contains(github.event.head_commit.message, '[skip ci]')"
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@master
+        with:
+          persist-credentials: false
+      - name: Build files using ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Release new version
+        id: release
+        run: |
+          yarn install --frozen-lockfile
+          composer install --prefer-dist --no-progress --no-suggest --ignore-platform-reqs
+          yarn run build
+          yarn run release
+        env:
+          CI: true
+          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+          GIT_AUTHOR_NAME: themeisle[bot]
+          GIT_AUTHOR_EMAIL: ${{ secrets.PIRATE_BOT_EMAIL }}
+          GIT_COMMITTER_NAME: themeisle[bot]
+          GIT_COMMITTER_EMAIL: ${{ secrets.PIRATE_BOT_EMAIL }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_ANNOUNCEMENTS }}
+          SEMANTIC_RELEASE_PACKAGE: NeveFSE
+  empty-job:
+    # if no jobs run, github action considers it a test failure -- which seems like a bug
+    # this makes it so the top-level if statement for the job does not give status failure.
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+      - name: Meep
+        run: |
+          echo "Nothing to do"

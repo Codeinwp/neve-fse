@@ -1,0 +1,23 @@
+%input-base {
+	border-radius: 5px;
+	color: var(--wp--preset--color--ti-fg);
+	background: var(--wp--preset--color--ti-bg);
+	border: 2px solid var(--wp--preset--color--ti-fg);
+}
+
+@mixin button-base {
+	border: 0;
+	box-shadow: none;
+	font-weight: 600;
+	padding: 16px 32px;
+	border-radius: 3px;
+	font-size: var(--wp--preset--font-size--normal);
+}
+
+%button {
+
+	@include button-base;
+	color: var(--wp--preset--color--ti-fg-alt);
+	background: var(--wp--preset--color--ti-accent);
+	border-color: var(--wp--preset--color--ti-accent);
+}

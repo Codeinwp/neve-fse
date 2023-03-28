@@ -1,0 +1,77 @@
+{
+  "name": "neve-fse",
+  "version": "1.0.2",
+  "description": "A lightweight theme for the full site editing WordPress experience.",
+  "author": "Themeisle <friends@themeisle.com>",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "wordpress-theme"
+  ],
+  "homepage": "https://github.com/Codeinwp/neve-fse",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Codeinwp/neve-fse"
+  },
+  "theme": {
+    "textdomain": "neve-fse"
+  },
+  "bugs": {
+    "url": "https://github.com/Codeinwp/neve-fse/issues"
+  },
+  "pot": {
+    "reportmsgidbugsto": "https://github.com/Codeinwp/neve-fse/issues",
+    "languageteam": "Themeisle Translate <friends@themeisle.com>",
+    "lasttranslator": "Themeisle Translate Team <friends@themeisle.com>"
+  },
+  "devDependencies": {
+    "@lodder/grunt-postcss": "^3.1.1",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@wordpress/eslint-plugin": "^12.8.0",
+    "@wordpress/scripts": "^23.6.0",
+    "@wordpress/stylelint-config": "^20.0.2",
+    "conventional-changelog-simple-preset": "^1.0.20",
+    "cssnano": "^5.1.12",
+    "eslint": "^8.21.0",
+    "grunt": "^1.5.3",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-rtlcss": "^2.0.2",
+    "grunt-sass": "^3.1.0",
+    "grunt-version": "^3.0.0",
+    "grunt-wp-i18n": "^1.0.3",
+    "grunt-wp-readme-to-markdown": "^2.1.0",
+    "lint-staged": "^13.0.3",
+    "load-project-config": "^0.2.1",
+    "node-sass": "^7.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.14",
+    "postcss-combine-media-query": "^1.0.1",
+    "postcss-custom-media": "^8.0.2",
+    "replace-in-file": "^6.3.5",
+    "semantic-release": "^19.0.3",
+    "semantic-release-slack-bot": "^3.5.3",
+    "simple-git-hooks": "^2.8.0"
+  },
+  "scripts": {
+    "build": "npm-run-all build:*",
+    "dev": "npm-run-all --parallel dev:* format:*",
+    "format": "npm-run-all format:*",
+    "lint": "npm-run-all lint:*",
+    "dist": "yarn run build && bash ./bin/dist.sh",
+    "release": "npx semantic-release",
+    "build:grunt": "grunt build",
+    "build:js": "wp-scripts build assets/js/src/*.js --output-path=assets/js/build",
+    "build:makepot": "bash ./bin/makepot.sh",
+    "dev:grunt": "grunt watch",
+    "dev:js": "wp-scripts build assets/js/src/*.js --output-path=assets/js/build --watch",
+    "lint:package-json": "wp-scripts lint-pkg-json ./",
+    "lint:js": "wp-scripts lint-js './assets/js/src/**/*.js'",
+    "format:js": "wp-scripts format assets/js/src/**/*.js",
+    "lint:scss": "wp-scripts lint-style './assets/css/src/**/*.scss'",
+    "format:scss": "wp-scripts lint-style './assets/css/src/**/*.scss' --fix"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  }
+}

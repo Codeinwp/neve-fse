@@ -1,0 +1,29 @@
+input:read-write,
+textarea,
+select {
+
+	@extend %input-base;
+}
+
+input:read-write:not([type="search"]),
+textarea,
+select {
+	width: 100%;
+	padding: 11px;
+	font-size: var(--wp--preset--font-size--normal);
+}
+
+input {
+	font-family: inherit;
+}
+
+textarea {
+	resize: vertical;
+	font-family: inherit;
+}
+
+input[type="submit"],
+button[type="submit"] {
+
+	@extend %button;
+}

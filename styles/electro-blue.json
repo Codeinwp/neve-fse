@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "title": "Electro Blue",
+    "version": 2,
+    "settings": {
+      "color": {
+        "palette": [
+          {
+            "slug": "ti-bg",
+            "color": "#2A3148",
+            "name": "Background"
+          },
+          {
+            "slug": "ti-fg",
+            "color": "#FFFFFF",
+            "name": "Foreground"
+          },
+          {
+            "slug": "ti-bg-alt",
+            "color": "rgba(255, 255, 255, 0.05)",
+            "name": "Background Alt"
+          },
+          {
+            "slug": "ti-bg-inv",
+            "color": "rgba(0, 0, 0, 0.3)",
+            "name": "Background Dark"
+          },
+          {
+            "slug": "ti-fg-alt",
+            "color": "#FBFBFB",
+            "name": "Foreground Alt"
+          },
+          {
+            "slug": "ti-accent",
+            "color": "#4889A5",
+            "name": "Accent"
+          }
+        ]
+      }
+    },
+    "styles": {
+      "typography": {
+        "fontFamily": "var(--wp--preset--font-family--figtree)"
+      }
+    }
+  }

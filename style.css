@@ -1,13 +1,17 @@
 /*
-Theme Name:     Neve FSE Child
-Theme URI:      https://themeisle.com/themes/neve/
-Template: neve
+Theme Name:     Neve FSE
+Theme URI:      https://themeisle.com/themes/neve-fse/
 Author:         ThemeIsle
 Author URI:     https://themeisle.com
-Description:    Neve is a super fast, easily customizable, multi-purpose theme. It’s perfect for blogs, small business, startups, agencies, firms, e-commerce shops (WooCommerce storefront) as well as personal portfolio sites and most types of projects. A fully AMP optimized and responsive theme, Neve will load in mere seconds and adapt perfectly on any viewing device. While it is lightweight and has a minimalist design, the theme is highly extendable, it has a highly SEO optimized code, resulting in top rankings in Google search results. Neve works perfectly with Gutenberg and the most popular page builders (Elementor, Brizy, Beaver Builder, Visual Composer, SiteOrigin, Divi). Neve is also WooCommerce ready, responsive, RTL & translation ready. Look no further. Neve is the perfect theme for you!
-Version:        1.0.0
+Tested up to:   6.1
+Requires PHP:   7.0
+Requires at least: 5.5
+Description:    Neve FSE is a modern, minimalistic theme that is fully compatible with full-site-editing. This powerful theme offers a range of patterns that make it perfect for simple design is suitable for a wide range of purposes, including blogs, small businesses, startups, agencies, firms, e-commerce shops, personal portfolio sites, and more. It also comes with several style variations to suit your unique aesthetic.
+Version:        1.0.2
 License:        GNU General Public License v2 or later
 License URI:    http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain:    neve
-Tags: blog, custom-logo, e-commerce, rtl-language-support, post-formats, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, accessibility-ready, wide-blocks, block-styles
+Text Domain:    neve-fse
+WordPress Available:  yes
+Requires License:     no
+Tags: one-column, custom-colors, custom-menu, custom-logo, e-commerce, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments
 */

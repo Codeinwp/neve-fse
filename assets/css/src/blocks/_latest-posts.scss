@@ -1,0 +1,18 @@
+.wp-block-latest-posts {
+
+	img {
+		display: block;
+	}
+
+	.wp-block-latest-posts__post-title {
+		display: block;
+		font-size: var(--wp--preset--font-size--medium);
+		font-weight: 600;
+		margin-bottom: 10px;
+	}
+
+	.wp-block-latest-posts__post-author,
+	time {
+		font-size: var(--wp--preset--font-size--small);
+	}
+}

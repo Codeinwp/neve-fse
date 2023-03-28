@@ -1,0 +1,14 @@
+.wp-block-search {
+
+	&.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+
+		@extend %input-base;
+	}
+
+	.wp-block-search__button {
+		background: var(--wp--preset--color--ti-accent);
+		color: var(--wp--preset--color--ti-fg-alt);
+		border-color: var(--wp--preset--color--ti-accent);
+		border-radius: 5px;
+	}
+}
