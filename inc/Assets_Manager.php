@@ -169,19 +169,4 @@ class Assets_Manager {
 
 		return $css;
 	}
-
-	/**
-	 * Get the font family from the font object.
-	 *
-	 * @param array $font Font object.
-	 *
-	 * @return string
-	 */
-	private static function get_font_family( $font ) {
-		$font_family = $font['fontFamily'];
-		if ( 'System Stack' === $font_family ) {
-			$font_family = $font['systemStack'];
-		}
-		return $font_family;
-	}
 }
