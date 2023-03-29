@@ -45,44 +45,245 @@
         {
           "fontFace": [
             {
-              "fontDisplay": "swap",
-              "fontFamily": "Readex Pro",
+              "fontDisplay": "inter",
+              "fontFamily": "Inter",
               "fontStretch": "normal",
               "fontStyle": "normal",
               "fontWeight": "160 700",
               "src": [
-                "file:./assets/fonts/readex-pro/ReadexPro-VariableFont_wght.ttf"
+                "file:./assets/fonts/inter/Inter-VariableFont_wght.ttf"
               ]
             }
           ],
-          "fontFamily": "\"Readex Pro\", sans-serif",
-          "name": "Readex Pro",
-          "slug": "readex-pro"
+          "fontFamily": "\"Inter\", sans-serif",
+          "name": "Inter",
+          "slug": "inter"
         },
         {
           "fontFace": [
             {
-              "fontFamily": "Source Serif Pro",
+              "fontFamily": "Albert Sans",
               "fontStretch": "normal",
               "fontStyle": "normal",
-              "fontWeight": "200 900",
+              "fontWeight": "300 900",
               "src": [
-                "file:./assets/fonts/source-serif-pro/SourceSerif4Variable-Roman.ttf.woff2"
+                "file:./assets/fonts/albert-sans/AlbertSans-VariableFont_wght.ttf"
               ]
             },
             {
-              "fontFamily": "Source Serif Pro",
+              "fontFamily": "Albert Sans",
               "fontStretch": "normal",
               "fontStyle": "italic",
-              "fontWeight": "200 900",
+              "fontWeight": "300 900",
               "src": [
-                "file:./assets/fonts/source-serif-pro/SourceSerif4Variable-Italic.ttf.woff2"
+                "file:./assets/fonts/albert-sans/AlbertSans-Italic-VariableFont_wght.ttf"
               ]
             }
           ],
-          "fontFamily": "\"Source Serif Pro\", serif",
-          "name": "Source Serif Pro",
-          "slug": "source-serif-pro"
+          "fontFamily": "\"Albert Sans\", sans-serif",
+          "name": "Albert Sans",
+          "slug": "albert-sans"
+        },
+        {
+          "fontFace": [
+            {
+              "fontFamily": "Fraunces",
+              "fontStretch": "normal",
+              "fontStyle": "normal",
+              "fontWeight": "300 900",
+              "src": [
+                "file:./assets/fonts/fraunces/Fraunces-VariableFont_wght.ttf"
+              ]
+            },
+            {
+              "fontFamily": "Fraunces",
+              "fontStretch": "normal",
+              "fontStyle": "italic",
+              "fontWeight": "300 900",
+              "src": [
+                "file:./assets/fonts/fraunces/Fraunces-Italic-VariableFont_wght.ttf"
+              ]
+            }
+          ],
+          "fontFamily": "\"Fraunces\", sans-serif",
+          "name": "Fraunces",
+          "slug": "fraunces"
+        },
+        {
+          "fontFace": [
+            {
+              "fontFamily": "Hanken Grotesk",
+              "fontStretch": "normal",
+              "fontStyle": "normal",
+              "fontWeight": "300 900",
+              "src": [
+                "file:./assets/fonts/hanken-grotesk/HankenGrotesk-VariableFont_wght.ttf"
+              ]
+            },
+            {
+              "fontFamily": "Fraunces",
+              "fontStretch": "normal",
+              "fontStyle": "italic",
+              "fontWeight": "300 900",
+              "src": [
+                "file:./assets/fonts/hanken-grotesk/HankenGrotesk-Italic-VariableFont_wght.ttf"
+              ]
+            }
+          ],
+          "fontFamily": "\"Hanken Grotesk\", serif",
+          "name": "Hanken Grotesk",
+          "slug": "hanken-grotesk"
+        },
+        {
+          "fontFace": [
+            {
+              "fontDisplay": "swap",
+              "fontFamily": "Outfit",
+              "fontStretch": "normal",
+              "fontStyle": "normal",
+              "fontWeight": "100 900",
+              "src": [
+                "file:./assets/fonts/outfit/Outfit-VariableFont_wght.ttf"
+              ]
+            }
+          ],
+          "fontFamily": "\"Outfit\", sans-serif",
+          "name": "Outfit",
+          "slug": "outfit"
+        },
+        {
+          "fontFace": [
+            {
+              "fontFamily": "Spline Sans",
+              "fontStretch": "normal",
+              "fontStyle": "normal",
+              "fontWeight": "300 900",
+              "src": [
+                "file:./assets/fonts/spline-sans/SplineSans-VariableFont_wght.ttf"
+              ]
+            }
+          ],
+          "fontFamily": "\"Spline Sans\", sans-serif",
+          "name": "Spline Sans",
+          "slug": "spline-sans"
+        },
+        {
+          "fontFace": [
+            {
+              "fontFamily": "Playfair Display",
+              "fontStretch": "normal",
+              "fontStyle": "normal",
+              "fontWeight": "300 900",
+              "src": [
+                "file:./assets/fonts/playfair-display/PlayfairDisplay-VariableFont_wght.ttf"
+              ]
+            },
+            {
+              "fontFamily": "Playfair Display",
+              "fontStretch": "normal",
+              "fontStyle": "italic",
+              "fontWeight": "300 900",
+              "src": [
+                "file:./assets/fonts/playfair-display/PlayfairDisplay-Italic-VariableFont_wght.ttf"
+              ]
+            }
+          ],
+          "fontFamily": "\"Playfair Display\", sans-serif",
+          "name": "Playfair Display",
+          "slug": "playfair-display"
+        },
+        {
+          "fontFace": [
+            {
+              "fontFamily": "Source Sans Pro",
+              "fontStretch": "normal",
+              "fontStyle": "normal",
+              "fontWeight": "300",
+              "src": [
+                "file:./assets/fonts/source-sans-pro/SourceSansPro-Regular.ttf"
+              ]
+            },
+            {
+              "fontFamily": "Source Sans Pro",
+              "fontStretch": "normal",
+              "fontStyle": "italic",
+              "fontWeight": "300",
+              "src": [
+                "file:./assets/fonts/source-sans-pro/SourceSansPro-Italic.ttf"
+              ]
+            },
+            {
+              "fontFamily": "Source Sans Pro",
+              "fontStretch": "normal",
+              "fontStyle": "normal",
+              "fontWeight": "700",
+              "src": [
+                "file:./assets/fonts/source-sans-pro/SourceSansPro-Bold.ttf"
+              ]
+            },
+            {
+              "fontFamily": "Source Sans Pro",
+              "fontStretch": "normal",
+              "fontStyle": "italic",
+              "fontWeight": "700",
+              "src": [
+                "file:./assets/fonts/source-sans-pro/SourceSansPro-BoldItalic.ttf"
+              ]
+            }
+          ],
+          "fontFamily": "\"Source Sans Pro\", serif",
+          "name": "Source Sans Pro",
+          "slug": "source-sans-pro"
+        },
+        {
+          "fontFace": [
+            {
+              "fontFamily": "Montserrat",
+              "fontStretch": "normal",
+              "fontStyle": "normal",
+              "fontWeight": "300 900",
+              "src": [
+                "file:./assets/fonts/montserrat/Montserrat-VariableFont_wght.ttf"
+              ]
+            },
+            {
+              "fontFamily": "Montserrat",
+              "fontStretch": "normal",
+              "fontStyle": "italic",
+              "fontWeight": "300 900",
+              "src": [
+                "file:./assets/fonts/montserrat/Montserrat-Italic-VariableFont_wght.ttf"
+              ]
+            }
+          ],
+          "fontFamily": "\"Montserrat\", sans-serif",
+          "name": "Montserrat",
+          "slug": "montserrat"
+        },
+        {
+          "fontFace": [
+            {
+              "fontFamily": "Open Sans",
+              "fontStretch": "normal",
+              "fontStyle": "normal",
+              "fontWeight": "300 900",
+              "src": [
+                "file:./assets/fonts/open-sans/OpenSans-VariableFont_wght.ttf"
+              ]
+            },
+            {
+              "fontFamily": "Montserrat",
+              "fontStretch": "normal",
+              "fontStyle": "italic",
+              "fontWeight": "300 900",
+              "src": [
+                "file:./assets/fonts/open-sans/OpenSans-Italic-VariableFont_wght.ttf"
+              ]
+            }
+          ],
+          "fontFamily": "\"Open Sans\", sans-serif",
+          "name": "Open Sans",
+          "slug": "open-sans"
         },
         {
           "fontFace": [
@@ -108,48 +309,6 @@
           "fontFamily": "\"Figtree\", sans-serif",
           "name": "Figtree",
           "slug": "figtree"
-        },
-        {
-          "fontFace": [
-            {
-              "fontDisplay": "swap",
-              "fontFamily": "Outfit",
-              "fontStretch": "normal",
-              "fontStyle": "normal",
-              "fontWeight": "100 900",
-              "src": [
-                "file:./assets/fonts/outfit/Outfit-VariableFont_wght.ttf"
-              ]
-            }
-          ],
-          "fontFamily": "\"Outfit\", sans-serif",
-          "name": "Outfit",
-          "slug": "outfit"
-        },
-        {
-          "fontFace": [
-            {
-              "fontFamily": "Lora",
-              "fontStretch": "normal",
-              "fontStyle": "normal",
-              "fontWeight": "400 700",
-              "src": [
-                "file:./assets/fonts/lora/Lora-VariableFont_wght.ttf"
-              ]
-            },
-            {
-              "fontFamily": "Lora",
-              "fontStretch": "normal",
-              "fontStyle": "italic",
-              "fontWeight": "400 700",
-              "src": [
-                "file:./assets/fonts/lora/Lora-Italic-VariableFont_wght.ttf"
-              ]
-            }
-          ],
-          "fontFamily": "\"Lora\", serif",
-          "name": "Lora",
-          "slug": "lora"
         }
       ],
       "fontSizes": [
@@ -180,7 +339,7 @@
         },
         {
           "slug": "huge",
-          "size": "72px",
+          "size": "64px",
           "name": "Huge"
         }
       ]

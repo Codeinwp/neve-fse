@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "title": "Aztec Gold",
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "ti-bg",
+          "color": "#181818",
+          "name": "Background"
+        },
+        {
+          "slug": "ti-fg",
+          "color": "#FFFFFF",
+          "name": "Foreground"
+        },
+        {
+          "slug": "ti-bg-alt",
+          "color": "#1F1F1F",
+          "name": "Background Alt"
+        },
+        {
+          "slug": "ti-bg-inv",
+          "color": "#000000",
+          "name": "Background Dark"
+        },
+        {
+          "slug": "ti-fg-alt",
+          "color": "#FFFFFF",
+          "name": "Foreground Alt"
+        },
+        {
+          "slug": "ti-accent",
+          "color": "#BF985C",
+          "name": "Accent"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--playfair-display)"
+        }
+      }
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--source-sans-pro)"
+    }
+  }
+}

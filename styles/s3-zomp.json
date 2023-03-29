@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "title": "Majorelle Blue",
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "ti-bg",
+          "color": "#F2EBE3",
+          "name": "Background"
+        },
+        {
+          "slug": "ti-fg",
+          "color": "#1F2023",
+          "name": "Foreground"
+        },
+        {
+          "slug": "ti-bg-alt",
+          "color": "#FFFFFF",
+          "name": "Background Alt"
+        },
+        {
+          "slug": "ti-bg-inv",
+          "color": "#1E2827",
+          "name": "Background Dark"
+        },
+        {
+          "slug": "ti-fg-alt",
+          "color": "#FFFFFF",
+          "name": "Foreground Alt"
+        },
+        {
+          "slug": "ti-accent",
+          "color": "#429C91",
+          "name": "Accent"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--fraunces)"
+        }
+      }
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--hanken-grotesk)"
+    }
+  }
+}
