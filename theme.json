@@ -606,6 +606,11 @@
       "area": "header"
     },
     {
+      "name": "header_s1",
+      "title": "Header Variation",
+      "area": "header"
+    },
+    {
       "name": "footer",
       "title": "Footer",
       "area": "footer"
