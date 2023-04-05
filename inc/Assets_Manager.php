@@ -21,6 +21,20 @@ class Assets_Manager {
 		'welcome-notice' => 'neve-fse-welcome-notice',
 	);
 
+	const AVAILABLE_THEME_FONTS = [
+		'Inter',
+		'Albert Sans',
+		'Fraunces',
+		'Hanken Grotesk',
+		'Outfit',
+		'Spline Sans',
+		'Playfair Display',
+		'Source Sans Pro',
+		'Montserrat',
+		'Open Sans',
+		'Figtree',
+	];
+
 	/**
 	 * Enqueue style.
 	 *
@@ -101,9 +115,12 @@ class Assets_Manager {
 		$css = '';
 
 		$color_vars = self::get_css_color_vars();
-		if ( ! empty( $color_vars ) ) {
-			$css .= ':root{' . $color_vars . '}';
+		$font_vars  = self::get_css_font_vars();
+		$css_vars   = $color_vars . $font_vars;
+		if ( ! empty( $css_vars ) ) {
+			$css .= ':root{' . $css_vars . '}';
 		}
+
 		return $css;
 	}
 
@@ -168,5 +185,50 @@ class Assets_Manager {
 
 
 		return $css;
+	}
+
+	/**
+	 * Get the CSS variables for the fonts from Neve.
+	 *
+	 * @return string
+	 */
+	private static function get_css_font_vars() {
+		$neve_body_font     = self::get_mod_from_neve( 'neve_body_font_family', 'default' );
+		$neve_headings_font = self::get_mod_from_neve( 'neve_headings_font_family', 'default' );
+		$css                = '';
+
+		if ( 'default' !== $neve_body_font && in_array( $neve_body_font, self::AVAILABLE_THEME_FONTS, true ) ) {
+			$css               .= '--neve-font-family-body:' . $neve_body_font . ';';
+			$neve_headings_font = $neve_body_font; // If the body font is set, the headings font should be the same until we check if the headings font is set.
+		}
+
+		if ( 'default' !== $neve_headings_font && in_array( $neve_headings_font, self::AVAILABLE_THEME_FONTS, true ) ) {
+			$css .= '--neve-font-family-heading:' . $neve_headings_font . ';';
+		}
+
+		$typeface_general = self::get_mod_from_neve( 'neve_typeface_general', [] );
+		// error_log( var_export( $typeface_general, true ) );
+
+		return $css;
+	}
+
+	private function convert_px_to_em( $px ) {
+		$em = $px / 16;
+		return $em;
+	}
+
+	private function convert_px_to_rem( $px ) {
+		$rem = $px / 16;
+		return $rem;
+	}
+
+	private function convert_em_to_px( $em ) {
+		$px = $em * 16;
+		return $px;
+	}
+
+	private function convert_rem_to_px( $rem ) {
+		$px = $rem * 16;
+		return $px;
 	}
 }
