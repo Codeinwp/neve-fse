@@ -21,7 +21,7 @@ class Assets_Manager {
 		'welcome-notice' => 'neve-fse-welcome-notice',
 	);
 
-	const AVAILABLE_THEME_FONTS = [
+	const AVAILABLE_THEME_FONTS = array(
 		'Inter',
 		'Albert Sans',
 		'Fraunces',
@@ -33,7 +33,7 @@ class Assets_Manager {
 		'Montserrat',
 		'Open Sans',
 		'Figtree',
-	];
+	);
 
 	/**
 	 * Enqueue style.
@@ -155,34 +155,15 @@ class Assets_Manager {
 	 * @return string
 	 */
 	private static function get_css_color_vars() {
-		$global_colors = self::get_mod_from_neve( 'neve_global_colors', array() );
-
-		if ( empty( $global_colors ) ) {
-			return '';
+		$neve_mods = Neve_Mods::get_instance();
+		$palette   = $neve_mods->get_neve_global_colors();
+		$css       = '';
+		if ( empty( $palette ) ) {
+			return $css;
 		}
-
-		if ( ! isset( $global_colors['activePalette'] ) ) {
-			return '';
-		}
-
-		$active = $global_colors['activePalette'];
-
-		if ( ! isset( $global_colors['palettes'][ $active ] ) ) {
-			return '';
-		}
-
-		$palette = $global_colors['palettes'][ $active ];
-
-		if ( ! isset( $palette['colors'] ) ) {
-			return '';
-		}
-
-		$css = '';
-
-		foreach ( $palette['colors'] as $slug => $color ) {
+		foreach ( $palette as $slug => $color ) {
 			$css .= '--' . $slug . ':' . $color . ';';
 		}
-
 
 		return $css;
 	}
@@ -193,8 +174,9 @@ class Assets_Manager {
 	 * @return string
 	 */
 	private static function get_css_font_vars() {
-		$neve_body_font     = self::get_mod_from_neve( 'neve_body_font_family', 'default' );
-		$neve_headings_font = self::get_mod_from_neve( 'neve_headings_font_family', 'default' );
+		$neve_mods          = Neve_Mods::get_instance();
+		$neve_body_font     = $neve_mods->get_neve_body_font_family();
+		$neve_headings_font = $neve_mods->get_neve_headings_font_family();
 		$css                = '';
 
 		if ( 'default' !== $neve_body_font && in_array( $neve_body_font, self::AVAILABLE_THEME_FONTS, true ) ) {
@@ -206,29 +188,89 @@ class Assets_Manager {
 			$css .= '--neve-font-family-heading:' . $neve_headings_font . ';';
 		}
 
-		$typeface_general = self::get_mod_from_neve( 'neve_typeface_general', [] );
-		// error_log( var_export( $typeface_general, true ) );
+		$typeface_sections   = Neve_Mods::AVAILABLE_TYPEFACE_CONTROLS;
+		$default_font_size   = '16px'; // default font size on most browsers.
+		$default_line_height = '1.5'; // default line height on most browsers.
+		foreach ( $typeface_sections as $typeface_section ) {
+			$type_setting_name = empty( $typeface_section ) ? '' : $typeface_section . '_';
+			$typeface          = $neve_mods->get_neve_typeface_general( $type_setting_name );
+			$css_typeface_name = empty( $typeface_section ) ? 'body' : $typeface_section;
+			if ( ! empty( $typeface ) && isset( $typeface['fontWeight'] ) ) {
+				// we default the global heading weight to the h1 weight.
+				if ( 'h1' === $typeface_section ) {
+					$css .= '--neve-font-weight-heading:' . $typeface['fontWeight'] . ';';
+				}
+				$css .= '--neve-font-weight-' . $css_typeface_name . ':' . $typeface['fontWeight'] . ';';
+			}
+
+			if ( ! empty( $typeface ) && isset( $typeface['fontSize'] ) ) {
+				$font_size = $default_font_size;
+				if ( isset( $typeface['fontSize']['desktop'] ) && isset( $typeface['fontSize']['suffix']['desktop'] ) ) {
+					$font_size = $typeface['fontSize']['desktop'] . 'px';
+					if ( 'px' !== $typeface['fontSize']['suffix']['desktop'] ) {
+						$font_size = self::convert_em_to_px( $typeface['fontSize']['desktop'] ) . 'px';
+					}
+				}
+
+				if ( '' === $typeface_section ) {
+					$default_font_size = $font_size; // set the inherited size as a default font size for further calculations.
+				}
+
+				// we default the global heading weight to the h1 weight.
+				if ( 'h1' === $typeface_section ) {
+					$css .= '--neve-font-size-heading:' . $font_size . ';';
+				}
+				$css .= '--neve-font-size-' . $css_typeface_name . ':' . $font_size . ';';
+			}
+
+			if ( ! empty( $typeface ) && isset( $typeface['lineHeight'] ) ) {
+				$line_height = $default_line_height;
+				if ( isset( $typeface['lineHeight']['desktop'] ) && isset( $typeface['lineHeight']['suffix']['desktop'] ) ) {
+					$line_height = $typeface['lineHeight']['desktop'];
+					if ( 'em' !== $typeface['lineHeight']['suffix']['desktop'] ) {
+						$line_height = self::convert_px_to_em( $typeface['fontSize']['desktop'], $default_font_size );
+					}
+				}
+
+				if ( '' === $typeface_section ) {
+					$default_line_height = $line_height; // set the inherited size as a default font size for further calculations.
+				}
+
+				// we default the global heading weight to the h1 weight.
+				if ( 'h1' === $typeface_section ) {
+					$css .= '--neve-font-line-height-heading:' . $font_size . ';';
+				}
+				$css .= '--neve-font-line-height-' . $css_typeface_name . ':' . $line_height . ';';
+			}
+		}
 
 		return $css;
 	}
 
-	private function convert_px_to_em( $px ) {
-		$em = $px / 16;
+	/**
+	 * Convert px to em.
+	 *
+	 * @param int $px         The px value.
+	 * @param int $default_px The default px value.
+	 *
+	 * @return float
+	 */
+	private static function convert_px_to_em( $px, $default_px = 16 ) {
+		$em = $px / $default_px;
 		return $em;
 	}
 
-	private function convert_px_to_rem( $px ) {
-		$rem = $px / 16;
-		return $rem;
-	}
-
-	private function convert_em_to_px( $em ) {
-		$px = $em * 16;
+	/**
+	 * Convert em to px.
+	 *
+	 * @param int $em         The em value.
+	 * @param int $default_px The default px value.
+	 *
+	 * @return float
+	 */
+	private static function convert_em_to_px( $em, $default_px = 16 ) {
+		$px = $em * $default_px;
 		return $px;
 	}
 
-	private function convert_rem_to_px( $rem ) {
-		$px = $rem * 16;
-		return $px;
-	}
 }
