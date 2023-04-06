@@ -473,7 +473,7 @@
     "blocks": {
       "core/button": {
         "border": {
-          "radius": "999px"
+          "radius": "var(--neve-button-border-radius, 9999px)"
         },
         "color": {
           "background": "var(--wp--preset--color--ti-accent)",

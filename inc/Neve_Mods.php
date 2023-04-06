@@ -86,6 +86,37 @@ class Neve_Mods {
 	}
 
 	/**
+	 * Get the button appearance from Neve.
+	 *
+	 * @return array
+	 */
+	public function get_neve_button_appearance() {
+		$button_appearance = $this->get_mod_from_neve( 'neve_button_appearance', array() );
+		if ( empty( $button_appearance ) ) {
+			return array();
+		}
+
+		$appearance = array(
+			'borderRadius' => '9999px',
+		);
+
+		if ( isset( $button_appearance['borderRadius'] ) && ! empty( $button_appearance['borderRadius'] ) ) {
+			$border_radius_array = $button_appearance['borderRadius'];
+
+			if ( ! isset( $border_radius_array['top'] ) || ! isset( $border_radius_array['right'] ) || ! isset( $border_radius_array['bottom'] ) || ! isset( $border_radius_array['left'] ) ) {
+				return $appearance;
+			}
+
+			if ( $border_radius_array['top'] === $border_radius_array['right'] && $border_radius_array['top'] === $border_radius_array['bottom'] && $border_radius_array['top'] === $border_radius_array['left'] ) {
+				$appearance['borderRadius'] = $border_radius_array['top'] . 'px';
+				return $appearance;
+			}
+			$appearance['borderRadius'] = $border_radius_array['top'] . 'px ' . $border_radius_array['right'] . 'px ' . $border_radius_array['bottom'] . 'px ' . $border_radius_array['left'] . 'px';
+		}
+		return $appearance;
+	}
+
+	/**
 	 * Get the colors from Neve.
 	 *
 	 * @return string

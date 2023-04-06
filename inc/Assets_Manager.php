@@ -114,9 +114,10 @@ class Assets_Manager {
 	public static function get_inherited_style_values() {
 		$css = '';
 
-		$color_vars = self::get_css_color_vars();
-		$font_vars  = self::get_css_font_vars();
-		$css_vars   = $color_vars . $font_vars;
+		$color_vars  = self::get_css_color_vars();
+		$font_vars   = self::get_css_font_vars();
+		$button_vars = self::get_css_button_vars();
+		$css_vars    = $color_vars . $font_vars . $button_vars;
 		if ( ! empty( $css_vars ) ) {
 			$css .= ':root{' . $css_vars . '}';
 		}
@@ -125,28 +126,22 @@ class Assets_Manager {
 	}
 
 	/**
-	 * Get the value of a mod from Neve.
+	 * Get the CSS variables for the button from Neve.
 	 *
-	 * @param string $name Mod name.
-	 * @param mixed  $default Default value.
-	 *
-	 * @return mixed
+	 * @return string
 	 */
-	private static function get_mod_from_neve( $name, $default = false ) {
-		$value     = $default;
-		$neve_mods = get_option( 'theme_mods_neve' );
-
-		if ( false === $neve_mods ) {
-			return $value;
+	private static function get_css_button_vars() {
+		$neve_mods        = Neve_Mods::get_instance();
+		$button_apperance = $neve_mods->get_neve_button_appearance();
+		$css              = '';
+		if ( empty( $button_apperance ) ) {
+			return $css;
+		}
+		if ( isset( $button_apperance['borderRadius'] ) ) {
+			$css .= '--neve-button-border-radius:' . $button_apperance['borderRadius'];
 		}
 
-		if ( ! isset( $neve_mods[ $name ] ) ) {
-			return $value;
-		}
-
-		$value = apply_filters( "theme_mod_{$name}", $neve_mods[ $name ] );
-
-		return $value;
+		return $css;
 	}
 
 	/**
