@@ -31,7 +31,7 @@
         "largeMin": "calc(var(--wp--custom--typography--large-max) * 0.85)",
         "xLargeMax": "40px",
         "xLargeMin": "calc(var(--wp--custom--typography--x-large-max) * 0.7)",
-        "xxLargeMax": "64px",
+        "xxLargeMax": "56px",
         "xxLargeMin": "calc(var(--wp--custom--typography--xx-large-max) * 0.56)"
       }
     },
