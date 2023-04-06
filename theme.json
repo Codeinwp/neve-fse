@@ -16,7 +16,7 @@
         },
         {
           "slug": "ti-bg-alt",
-          "color": "var(--nv-light-bg, #EDEAE4)",
+          "color": "var(--nv-light-bg, #f7f7f3)",
           "name": "Background Alt"
         },
         {
