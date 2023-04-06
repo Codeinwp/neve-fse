@@ -449,7 +449,7 @@
     "blocks": {
       "core/button": {
         "border": {
-          "radius": "999px"
+          "radius": "5px"
         },
         "color": {
           "background": "var(--wp--preset--color--ti-accent)",
@@ -477,10 +477,10 @@
         },
         "spacing": {
           "padding": {
-            "bottom": "24px",
-            "left": "24px",
-            "right": "24px",
-            "top": "24px"
+            "bottom": "16px",
+            "left": "16px",
+            "right": "16px",
+            "top": "16px"
           }
         }
       },
