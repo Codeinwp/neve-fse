@@ -607,22 +607,17 @@
     },
     {
       "name": "header_s1",
-      "title": "Header - Centered",
+      "title": "Header Variation - Centered",
       "area": "header"
     },
     {
       "name": "header_s2",
-      "title": "Header with Button",
-      "area": "header"
-    },
-    {
-      "name": "header_s2",
-      "title": "Header with Button",
+      "title": "Header Variation - Button",
       "area": "header"
     },
     {
       "name": "header_s3",
-      "title": "Header - Hamburger Menu",
+      "title": "Header Variation - Hamburger Menu",
       "area": "header"
     },
     {
@@ -632,22 +627,22 @@
     },
     {
       "name": "footer_s1",
-      "title": "Footer - Site Logo",
+      "title": "Footer Variation - Site Logo",
       "area": "footer"
     },
     {
       "name": "footer_s2",
-      "title": "Footer - 3 Columns",
+      "title": "Footer Variation - 3 Columns",
       "area": "footer"
     },
     {
       "name": "footer_s3",
-      "title": "Footer - 4 Columns",
+      "title": "Footer Variation - 4 Columns",
       "area": "footer"
     },
     {
       "name": "footer_s4",
-      "title": "Footer - 5 Columns",
+      "title": "Footer Variation - 5 Columns",
       "area": "footer"
     }
   ]
