@@ -42,7 +42,7 @@
     "elements": {
       "h1": {
         "typography": {
-          "fontWeight": "600"
+          "fontWeight": "500"
         }
       },
       "h2": {
