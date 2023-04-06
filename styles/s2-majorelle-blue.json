@@ -39,6 +39,38 @@
     }
   },
   "styles": {
+"elements": {
+      "h1": {
+        "typography": {
+          "fontWeight": "600"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontWeight": "600"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontWeight": "600"
+        }
+      },
+      "h4": {
+        "typography": {
+          "fontWeight": "600"
+        }
+      },
+      "h5": {
+        "typography": {
+          "fontWeight": "600"
+        }
+      },
+      "h6": {
+        "typography": {
+          "fontWeight": "600"
+        }
+      }
+    },   
     "typography": {
       "fontFamily": "var(--wp--preset--font-family--albert-sans)"
     }
