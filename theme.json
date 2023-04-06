@@ -31,7 +31,7 @@
         },
         {
           "slug": "ti-accent",
-          "color": "var(--nv-primary-accent, #435DEB)",
+          "color": "var(--nv-primary-accent, #325ce8)",
           "name": "Accent"
         }
       ],
