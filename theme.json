@@ -614,6 +614,26 @@
       "name": "footer",
       "title": "Footer",
       "area": "footer"
+    },
+    {
+      "name": "footer_s1",
+      "title": "Footer with site logo",
+      "area": "footer"
+    },
+    {
+      "name": "footer_s2",
+      "title": "Footer with 3 columns",
+      "area": "footer"
+    },
+    {
+      "name": "footer_s3",
+      "title": "Footer with 4 columns",
+      "area": "footer"
+    },
+    {
+      "name": "footer_s4",
+      "title": "Footer with 5 columns",
+      "area": "footer"
     }
   ]
 }
