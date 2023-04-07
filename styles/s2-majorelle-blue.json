@@ -70,7 +70,13 @@
           "fontWeight": "800"
         }
       }
-    },   
+    },
+    "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--albert-sans)"
+        }
+      }
+    },
     "typography": {
       "fontFamily": "var(--wp--preset--font-family--albert-sans)"
     }
