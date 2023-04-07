@@ -42,32 +42,32 @@
     "elements": {
       "h1": {
         "typography": {
-          "fontWeight": "800"
+          "fontWeight": "700"
         }
       },
       "h2": {
         "typography": {
-          "fontWeight": "800"
+          "fontWeight": "700"
         }
       },
       "h3": {
         "typography": {
-          "fontWeight": "800"
+          "fontWeight": "700"
         }
       },
       "h4": {
         "typography": {
-          "fontWeight": "800"
+          "fontWeight": "700"
         }
       },
       "h5": {
         "typography": {
-          "fontWeight": "800"
+          "fontWeight": "700"
         }
       },
       "h6": {
         "typography": {
-          "fontWeight": "800"
+          "fontWeight": "700"
         }
       },
       "heading": {
