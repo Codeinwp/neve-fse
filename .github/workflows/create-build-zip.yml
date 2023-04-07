@@ -16,6 +16,10 @@ jobs:
     steps:
       - name: Check out source files
         uses: actions/checkout@v2
+      - name: Setup node 16
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
       - name: Get Composer Cache Directory
         id: composer-cache
         run: |
