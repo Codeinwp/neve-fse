@@ -1,6 +1,6 @@
 {
   "$schema": "https://schemas.wp.org/trunk/theme.json",
-  "title": "Crayola",
+  "title": "Greenlight",
   "version": 2,
   "settings": {
     "color": {
