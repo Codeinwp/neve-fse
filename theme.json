@@ -474,7 +474,10 @@
     "blocks": {
       "core/button": {
         "border": {
-          "radius": "var(--neve-button-border-radius, 5px)"
+          "radius": "var(--neve-button-border-radius, 5px)",
+          "width": "2px",
+          "style": "solid",
+          "color": "var(--wp--preset--color--ti-accent)"
         },
         "color": {
           "background": "var(--wp--preset--color--ti-accent)",
