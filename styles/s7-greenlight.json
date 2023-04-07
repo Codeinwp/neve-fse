@@ -40,6 +40,11 @@
   },
   "styles": {
     "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--figtree)"
+        }
+      },
       "h1": {
         "typography": {
           "fontWeight": "700"
@@ -57,7 +62,7 @@
       },
       "h4": {
         "typography": {
-          "fontWeight": "700"
+          "fontWeight": "600"
         }
       },
       "h5": {
@@ -69,11 +74,6 @@
         "typography": {
           "fontWeight": "600"
         }
-      }
-    },
-    "heading": {
-      "typography": {
-        "fontFamily": "var(--wp--preset--font-family--figtree)"
       }
     },
     "typography": {
