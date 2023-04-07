@@ -69,6 +69,6 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
  */
 body .wp-block-button.is-style-outline > .wp-block-button__link,
 body .wp-block-button .wp-block-button__link.is-style-outline {
-	border: 2px solid;
+	border: 2px solid var(--wp--preset--color--ti-fg);
 	padding: 16px 40px;
 }
