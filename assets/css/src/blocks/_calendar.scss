@@ -9,6 +9,7 @@
 :where(.wp-block-calendar table:not(.has-background) th) {
 	border-color: 1 px solid var(--wp--preset--color--ti-bg-alt);
 	background-color: var(--wp--preset--color--ti-bg-inv);
+	color: var(--wp--preset--color--ti-fg-alt);
 }
 
 /* Text of calendar should inherit ti-fg color */
