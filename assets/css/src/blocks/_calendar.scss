@@ -1,0 +1,17 @@
+/* Border color of calendar should inherit ti-bg-alt color */
+.wp-block-calendar table:where(:not(.has-text-color)) td,
+.wp-block-calendar table:where(:not(.has-text-color)) th {
+	border: 1px solid var(--wp--preset--color--ti-bg-alt);
+	padding: 8px;
+}
+
+/*Set bg color of calendar header to bg-inv, and the border color to bg-alt */
+:where(.wp-block-calendar table:not(.has-background) th) {
+	border-color: 1 px solid var(--wp--preset--color--ti-bg-alt);
+	background-color: var(--wp--preset--color--ti-bg-inv);
+}
+
+/* Text of calendar should inherit ti-fg color */
+.wp-block-calendar table:where(:not(.has-text-color)) {
+	color: var(--wp--preset--color--ti-fg);
+}
