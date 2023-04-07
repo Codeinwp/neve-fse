@@ -474,7 +474,14 @@
     "blocks": {
       "core/button": {
         "border": {
+<<<<<<< Updated upstream
           "radius": "var(--neve-button-border-radius, 9999px)"
+=======
+          "radius": "var(--neve-button-border-radius, 5px)",
+          "width": "2px",
+          "style": "solid",
+          "color": "var(--wp--preset--color--ti-accent)"
+>>>>>>> Stashed changes
         },
         "color": {
           "background": "var(--wp--preset--color--ti-accent)",

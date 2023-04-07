@@ -60,3 +60,15 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	margin-right: calc(-1 * var(--wp--custom--spacing--outer)) !important;
 	width: unset;
 }
+
+/**
+ * Override button outline paddings because they
+ * can NOT be changed from the theme.json.
+ * Relevant issue:
+ * https://github.com/WordPress/gutenberg/issues/34853
+ */
+body .wp-block-button.is-style-outline > .wp-block-button__link,
+body .wp-block-button .wp-block-button__link.is-style-outline {
+	border: 2px solid;
+	padding: 16px 40px;
+}
