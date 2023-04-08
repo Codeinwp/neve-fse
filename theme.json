@@ -672,6 +672,36 @@
       "name": "footer_s4",
       "title": "Footer Variation - 5 Columns",
       "area": "footer"
+    },
+    {
+      "name": "page_title",
+      "title": "Page Title",
+      "area": "page_title"
+    },
+    {
+      "name": "page_title_s1",
+      "title": "Page Title - Default",
+      "area": "page_title"
+    },
+    {
+      "name": "page_title_s2",
+      "title": "Page Title with background",
+      "area": "page_title"
+    },
+    {
+      "name": "page_title_s3",
+      "title": "Page Title with background",
+      "area": "page_title"
+    },
+    {
+      "name": "page_title_s4",
+      "title": "Page Title Cover",
+      "area": "page_title"
+    },
+    {
+      "name": "page_title_s5",
+      "title": "Page Title Cover Boxed",
+      "area": "page_title"
     }
   ]
 }

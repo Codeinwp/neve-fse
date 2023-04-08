@@ -34,6 +34,15 @@ class Block_Patterns {
 	private $patterns = array();
 
 	/**
+	 * The Pattern Parts array.
+	 *
+	 * These use the file names without termination inside the `inc/patterns/parts` directory.
+	 *
+	 * @var array
+	 */
+	private $pattern_parts = array();
+
+	/**
 	 * Block_Patterns constructor.
 	 */
 	public function __construct() {
@@ -50,6 +59,7 @@ class Block_Patterns {
 	public function run() {
 		$this->register_categories();
 		$this->register_patterns();
+		$this->register_pattern_parts();
 	}
 
 	/**
@@ -78,8 +88,13 @@ class Block_Patterns {
 			'content-with-image-and-button',
 		);
 
-		$this->categories = apply_filters( 'neve_fse_block_patterns_categories', $categories );
-		$this->patterns   = apply_filters( 'neve_fse_block_patterns', $patterns );
+		$pattern_parts = array(
+			'cover-title' => array( false, true ),
+		);
+
+		$this->categories    = apply_filters( 'neve_fse_block_patterns_categories', $categories );
+		$this->patterns      = apply_filters( 'neve_fse_block_patterns', $patterns );
+		$this->pattern_parts = apply_filters( 'neve_fse_block_pattern_parts', $pattern_parts );
 	}
 
 	/**
@@ -111,6 +126,29 @@ class Block_Patterns {
 			}
 
 			register_block_pattern( 'neve-fse/' . $pattern, require $file );
+		}
+	}
+
+	/**
+	 * Register Pattern Parts.
+	 *
+	 * @return void
+	 */
+	private function register_pattern_parts() {
+		foreach ( $this->pattern_parts as $pattern_part => $args ) {
+			$file = NEVE_FSE_DIR . 'inc/patterns/parts/' . $pattern_part . '.php';
+
+			if ( ! is_file( $file ) ) {
+				continue;
+			}
+
+			require $file;
+			// convert string file name of format `cover-title` to class name of format `Cover_Title`.
+			$pattern_part_class_name = 'NeveFSE\\Patterns\\Parts\\' . implode( '_', array_map( 'ucfirst', explode( '-', $pattern_part ) ) );
+			foreach ( $args as $key => $value ) {
+				$pattern_part_instance = new $pattern_part_class_name( $value );
+				register_block_pattern( 'neve-fse/parts/' . $pattern_part_instance->get_slug(), $pattern_part_instance->get_pattern() );
+			}
 		}
 	}
 }
