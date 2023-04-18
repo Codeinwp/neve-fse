@@ -103,6 +103,12 @@ class Block_Patterns {
 			'loops/post-loop-8',
 			'loops/post-loop-9',
 
+			'page_titles/page-title-1',
+			'page_titles/page-title-2',
+			'page_titles/page-title-3',
+			'page_titles/page-title-4',
+			'page_titles/page-title-5',
+
 			'core/page-cover-hero',
 		);
 
