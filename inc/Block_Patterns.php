@@ -63,20 +63,10 @@ class Block_Patterns {
 		);
 
 		$patterns = array(
-//			'boxed-pricing-plans',
-//			'call-to-action-inverted',
-//			'columns-with-icons',
-//			'columns-with-icons-and-buttons',
-//			'content-boxes-with-buttons',
-//			'gallery-with-title',
-//			'hero-cover-with-title-and-button',
-//			'hero-with-feature-boxes',
-//			'posts-section',
-//			'service-cards-with-buttons',
-//			'testimonials',
-//			'front-page-hero',
-//			'content-with-image-and-button',
+			// Core patterns.
+			'core/page-cover-hero',
 
+			// layout patterns.
 			'layout/cta-dark',
 			'layout/full-width-columns-content-image',
 			'layout/full-width-quote',
@@ -93,6 +83,7 @@ class Block_Patterns {
 			'layout/columns-with-cards',
 			'layout/columns-content-images',
 
+			// Post patterns.
 			'loops/post-loop-1',
 			'loops/post-loop-2',
 			'loops/post-loop-3',
@@ -103,13 +94,27 @@ class Block_Patterns {
 			'loops/post-loop-8',
 			'loops/post-loop-9',
 
+			// Page title patterns.
 			'page_titles/page-title-1',
 			'page_titles/page-title-2',
 			'page_titles/page-title-3',
 			'page_titles/page-title-4',
 			'page_titles/page-title-5',
 
-			'core/page-cover-hero',
+			// Deprecated patterns.
+			'boxed-pricing-plans',
+			'call-to-action-inverted',
+			'columns-with-icons',
+			'columns-with-icons-and-buttons',
+			'content-boxes-with-buttons',
+			'gallery-with-title',
+			'hero-cover-with-title-and-button',
+			'hero-with-feature-boxes',
+			'posts-section',
+			'service-cards-with-buttons',
+			'testimonials',
+			'front-page-hero',
+			'content-with-image-and-button',
 		);
 
 		$this->categories = apply_filters( 'neve_fse_block_patterns_categories', $categories );
