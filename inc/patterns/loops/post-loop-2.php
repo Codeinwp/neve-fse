@@ -38,5 +38,5 @@ return array(
 <!-- /wp:query-no-results --></div>
 <!-- /wp:query --></div>
 <!-- /wp:group -->
-        '
+        ',
 );

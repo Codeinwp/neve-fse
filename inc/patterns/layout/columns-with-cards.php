@@ -103,5 +103,5 @@ return array(
 <!-- /wp:columns --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
-        '
+        ',
 );

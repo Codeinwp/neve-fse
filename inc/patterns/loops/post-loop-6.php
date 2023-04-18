@@ -48,5 +48,5 @@ return array(
 <!-- /wp:query-pagination --></div>
 <!-- /wp:query --></div>
 <!-- /wp:group -->
-		'
+		',
 );
