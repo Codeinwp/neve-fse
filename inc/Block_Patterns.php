@@ -93,6 +93,16 @@ class Block_Patterns {
 			'layout/columns-with-cards',
 			'layout/columns-content-images',
 
+			'loops/post-loop-1',
+			'loops/post-loop-2',
+			'loops/post-loop-3',
+			'loops/post-loop-4',
+			'loops/post-loop-5',
+			'loops/post-loop-6',
+			'loops/post-loop-7',
+			'loops/post-loop-8',
+			'loops/post-loop-9',
+
 			'core/page-cover-hero',
 		);
 
