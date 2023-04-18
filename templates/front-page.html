@@ -1,20 +1,88 @@
 <!-- wp:template-part {"slug":"header","theme":"neve-fse","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"},"blockGap":"0","margin":{"top":"0","bottom":"0"}}}} -->
-<main class="wp-block-group"
-      style="margin-top:0;margin-bottom:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"},"blockGap":"0","margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
+<main class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+    <!-- wp:pattern {"slug":"neve-fse/core/page-cover-hero"} /-->
 
-    <!-- wp:pattern {"slug":"neve-fse/front-page-hero"} /-->
-    <!-- wp:pattern {"slug":"neve-fse/columns-with-icons"} /-->
+    <!-- wp:pattern {"slug":"neve-fse/layout/columns-with-icons"} /-->
 
     <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"64px","bottom":"64px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"64px"}},"layout":{"type":"constrained"}} -->
-    <div class="wp-block-group alignfull" style="margin-top:0px;margin-bottom:0px;padding-top:64px;padding-bottom:64px">
-        <!-- wp:post-content /-->
-    </div>
+    <div class="wp-block-group alignfull" style="margin-top:0px;margin-bottom:0px;padding-top:64px;padding-bottom:64px"><!-- wp:post-content /--></div>
     <!-- /wp:group -->
 
-    <!-- wp:pattern {"slug":"neve-fse/content-with-image-and-button"} /-->
-</main>
+    <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"64px","bottom":"64px"},"blockGap":"64px","margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull" style="margin-top:0px;margin-bottom:0px;padding-top:64px;padding-bottom:64px"><!-- wp:columns {"align":"wide"} -->
+        <div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"center","width":"30%"} -->
+            <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:30%"><!-- wp:group {"style":{"spacing":{"padding":{"left":"16px"},"blockGap":"8px"},"border":{"left":{"color":"var:preset|color|ti-accent","width":"4px"}}},"layout":{"type":"default"}} -->
+                <div class="wp-block-group" style="border-left-color:var(--wp--preset--color--ti-accent);border-left-width:4px;padding-left:16px"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase"}},"fontSize":"small"} -->
+                    <p class="has-small-font-size" style="text-transform:uppercase"><strong>Subheader</strong></p>
+                    <!-- /wp:paragraph --></div>
+                <!-- /wp:group -->
+
+                <!-- wp:heading -->
+                <h2 class="wp-block-heading">Branding</h2>
+                <!-- /wp:heading -->
+
+                <!-- wp:paragraph -->
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <!-- /wp:paragraph -->
+
+                <!-- wp:buttons -->
+                <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-fill"} -->
+                    <div class="wp-block-button is-style-fill"><a class="wp-block-button__link wp-element-button">Learn more</a></div>
+                    <!-- /wp:button --></div>
+                <!-- /wp:buttons --></div>
+            <!-- /wp:column -->
+
+            <!-- wp:column -->
+            <div class="wp-block-column"><!-- wp:image {"id":20,"sizeSlug":"large","linkDestination":"none","className":"size-full"} -->
+                <figure class="wp-block-image size-large size-full"><img src="https://fse-neve.vertisite.cloud/wp-content/uploads/2023/03/Neve-fse-6-1024x533.jpg" alt="" class="wp-image-20"/></figure>
+                <!-- /wp:image --></div>
+            <!-- /wp:column --></div>
+        <!-- /wp:columns --></div>
+    <!-- /wp:group -->
+
+    <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"64px","bottom":"64px"},"blockGap":"40px","margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull" style="margin-top:0px;margin-bottom:0px;padding-top:64px;padding-bottom:64px"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"left":"16px"},"blockGap":"8px"},"border":{"left":{"color":"var:preset|color|ti-accent","width":"4px"}}},"layout":{"type":"default"}} -->
+        <div class="wp-block-group alignwide" style="border-left-color:var(--wp--preset--color--ti-accent);border-left-width:4px;padding-left:16px"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase"}},"fontSize":"small"} -->
+            <p class="has-small-font-size" style="text-transform:uppercase"><strong>Subheader</strong></p>
+            <!-- /wp:paragraph --></div>
+        <!-- /wp:group -->
+
+        <!-- wp:query {"queryId":1,"query":{"perPage":3,"pages":"3","offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"displayLayout":{"type":"flex","columns":3},"align":"wide"} -->
+        <div class="wp-block-query alignwide"><!-- wp:post-template -->
+            <!-- wp:post-featured-image {"isLink":true} /-->
+
+            <!-- wp:post-terms {"term":"category","textAlign":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"500"}},"fontSize":"small"} /-->
+
+            <!-- wp:post-title {"textAlign":"center","level":3,"isLink":true} /-->
+            <!-- /wp:post-template -->
+
+            <!-- wp:query-no-results -->
+            <!-- wp:paragraph {"align":"center","placeholder":"Add text or blocks that will display when a query returns no results.","backgroundColor":"ti-bg"} -->
+            <p class="has-text-align-center has-ti-bg-background-color has-background">No Posts were found</p>
+            <!-- /wp:paragraph -->
+            <!-- /wp:query-no-results --></div>
+        <!-- /wp:query --></div>
+    <!-- /wp:group -->
+
+    <!-- wp:cover {"overlayColor":"ti-bg-inv","minHeight":50,"minHeightUnit":"vh","contentPosition":"center center","align":"full","style":{"spacing":{"padding":{"top":"24px","right":"24px","bottom":"24px","left":"24px"}}}} -->
+    <div class="wp-block-cover alignfull" style="padding-top:24px;padding-right:24px;padding-bottom:24px;padding-left:24px;min-height:50vh"><span aria-hidden="true" class="wp-block-cover__background has-ti-bg-inv-background-color has-background-dim-100 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"textColor":"ti-fg-alt","layout":{"type":"constrained"}} -->
+        <div class="wp-block-group has-ti-fg-alt-color has-text-color"><!-- wp:heading {"textAlign":"center","align":"wide","fontSize":"huge"} -->
+            <h2 class="wp-block-heading alignwide has-text-align-center has-huge-font-size">Let’s work together on your<br>next web project</h2>
+            <!-- /wp:heading -->
+
+            <!-- wp:paragraph {"align":"center"} -->
+            <p class="has-text-align-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            <!-- /wp:paragraph -->
+
+            <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+            <div class="wp-block-buttons"><!-- wp:button -->
+                <div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Learn More</a></div>
+                <!-- /wp:button --></div>
+            <!-- /wp:buttons --></div>
+        <!-- /wp:group --></div></div>
+    <!-- /wp:cover --></main>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","theme":"neve-fse","tagName":"footer"} /-->
