@@ -100,21 +100,6 @@ class Block_Patterns {
 			'page_titles/page-title-3',
 			'page_titles/page-title-4',
 			'page_titles/page-title-5',
-
-			// Deprecated patterns.
-			'boxed-pricing-plans',
-			'call-to-action-inverted',
-			'columns-with-icons',
-			'columns-with-icons-and-buttons',
-			'content-boxes-with-buttons',
-			'gallery-with-title',
-			'hero-cover-with-title-and-button',
-			'hero-with-feature-boxes',
-			'posts-section',
-			'service-cards-with-buttons',
-			'testimonials',
-			'front-page-hero',
-			'content-with-image-and-button',
 		);
 
 		$this->categories = apply_filters( 'neve_fse_block_patterns_categories', $categories );
