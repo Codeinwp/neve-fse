@@ -59,12 +59,20 @@ class Block_Patterns {
 	 */
 	private function setup_properties() {
 		$categories = array(
-			'neve-fse' => array( 'label' => __( 'Neve FSE Patterns', 'neve-fse' ) ),
+			'neve-fse'         => array(
+				'label'       => __( 'Neve FSE Patterns', 'neve-fse' ),
+				'description' => __( 'Patterns for several sections and components', 'neve-fse' ),
+			),
+			'neve-fse-layouts' => array(
+				'label'       => __( 'Neve FSE Layouts', 'neve-fse' ),
+				'description' => __( 'Full-page layouts that can be used as templates', 'neve-fse' ),
+			),
 		);
 
 		$patterns = array(
-			// Core patterns.
-			'core/page-cover-hero',
+			// layout templates patterns.
+			'templates/single-post-cover-boxed',
+			'templates/single-post-cover',
 
 			// layout patterns.
 			'layout/cta-dark',
