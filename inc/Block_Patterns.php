@@ -73,6 +73,8 @@ class Block_Patterns {
 			// layout templates patterns.
 			'templates/single-post-cover-boxed',
 			'templates/single-post-cover',
+			'templates/archive-cover',
+			'templates/archive-list',
 
 			// layout patterns.
 			'layout/cta-dark',

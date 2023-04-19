@@ -19,8 +19,6 @@ return array(
 	'categories' => array( 'neve-fse-layouts' ),
 	'keywords'   => array( 'single', 'post', 'cover', 'boxed' ),
 	'content'    => '
-<!-- wp:template-part {"slug":"header","theme":"neve-fse","tagName":"header"} /-->
-
 <!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"},"blockGap":"0","margin":{"top":"0","bottom":"0"}}}} -->
 <main class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:group {"align":"full","layout":{"type":"default"}} -->
 <div class="wp-block-group alignfull"><!-- wp:cover {"useFeaturedImage":true,"dimRatio":10,"overlayColor":"ti-bg-inv","minHeight":45,"minHeightUnit":"vh","align":"full","style":{"spacing":{"padding":{"top":"64px","right":"24px","bottom":"64px","left":"24px"}}}} -->
@@ -90,7 +88,5 @@ return array(
 <!-- /wp:comments --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer","theme":"neve-fse","tagName":"footer"} /-->
 	',
 );
