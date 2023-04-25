@@ -92,6 +92,11 @@ class Block_Patterns {
 			'layout/boxed-features-2',
 			'layout/columns-with-cards',
 			'layout/columns-content-images',
+			'layout/columns-testimonials',
+			'layout/columns-text-image',
+			'layout/columns-image-and-text',
+			'layout/portfolio-columns',
+			'layout/columns-image-and-text-inv',
 
 			// Post patterns.
 			'loops/post-loop-1',
