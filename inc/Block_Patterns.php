@@ -86,7 +86,6 @@ class Block_Patterns {
 			'layout/team-members-columns',
 			'layout/columns-with-services',
 			'layout/pricing-columns',
-			'layout/content-columns-images',
 			'layout/columns-with-icons',
 			'layout/boxed-features-1',
 			'layout/boxed-features-2',
