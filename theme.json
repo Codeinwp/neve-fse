@@ -472,6 +472,11 @@
       }
     },
     "blocks": {
+      "core/site-logo": {
+         "dimensions": {
+            "width": "48"
+         }
+      },
       "core/button": {
         "border": {
           "radius": "var(--neve-button-border-radius, 5px)",
