@@ -32,9 +32,9 @@ return array(
     <div class="wp-block-columns alignwide">
         <!-- wp:column {"style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"}}}} -->
         <div class="wp-block-column" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
-            <!-- wp:cover {"url":"' . esc_url( $neve_fse_img05 ) . '","dimRatio":16,"overlayColor":"ti-bg-inv","contentPosition":"bottom left","isDark":false,"style":{"spacing":{"padding":{"top":"24px","right":"24px","bottom":"24px","left":"24px"}}}} -->
+            <!-- wp:cover {"url":"' . esc_url( $neve_fse_img05 ) . '","dimRatio":10,"overlayColor":"ti-bg-inv","contentPosition":"bottom left","isDark":false,"style":{"spacing":{"padding":{"top":"24px","right":"24px","bottom":"24px","left":"24px"}}}} -->
             <div class="wp-block-cover is-light has-custom-content-position is-position-bottom-left" style="padding-top:24px;padding-right:24px;padding-bottom:24px;padding-left:24px">
-                <span aria-hidden="true" class="wp-block-cover__background has-ti-bg-inv-background-color has-background-dim-16 has-background-dim"></span>
+                <span aria-hidden="true" class="wp-block-cover__background has-ti-bg-inv-background-color has-background-dim-10 has-background-dim"></span>
                 <img class="wp-block-cover__image-background" alt="" src="' . esc_url( $neve_fse_img05 ) . '" data-object-fit="cover"/>
                 <div class="wp-block-cover__inner-container">
                     <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
@@ -52,9 +52,9 @@ return array(
 
         <!-- wp:column {"style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"}}}} -->
         <div class="wp-block-column" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
-            <!-- wp:cover {"url":"' . esc_url( $neve_fse_img04 ) . '","dimRatio":16,"overlayColor":"ti-bg-inv","contentPosition":"bottom left","isDark":false,"style":{"spacing":{"padding":{"top":"24px","right":"24px","bottom":"24px","left":"24px"}}}} -->
+            <!-- wp:cover {"url":"' . esc_url( $neve_fse_img04 ) . '","dimRatio":10,"overlayColor":"ti-bg-inv","contentPosition":"bottom left","isDark":false,"style":{"spacing":{"padding":{"top":"24px","right":"24px","bottom":"24px","left":"24px"}}}} -->
             <div class="wp-block-cover is-light has-custom-content-position is-position-bottom-left" style="padding-top:24px;padding-right:24px;padding-bottom:24px;padding-left:24px">
-                <span aria-hidden="true" class="wp-block-cover__background has-ti-bg-inv-background-color has-background-dim-16 has-background-dim"></span>
+                <span aria-hidden="true" class="wp-block-cover__background has-ti-bg-inv-background-color has-background-dim-10 has-background-dim"></span>
                 <img class="wp-block-cover__image-background" alt="" src="' . esc_url( $neve_fse_img04 ) . '" data-object-fit="cover"/>
                 <div class="wp-block-cover__inner-container">
                     <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
