@@ -45,7 +45,7 @@ return array(
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Leran more</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Learn more</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -70,7 +70,7 @@ return array(
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Leran more</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Learn more</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -95,7 +95,7 @@ return array(
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Leran more</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Learn more</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
