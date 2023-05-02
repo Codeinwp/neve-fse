@@ -36,13 +36,13 @@ return array(
     		<div class="wp-block-columns">
     			<!-- wp:column {"width":"30%"} -->
     			<div class="wp-block-column" style="flex-basis:30%">
-    				<!-- wp:post-featured-image /-->
+    				<!-- wp:post-featured-image {"isLink":true} /-->
     			</div>
     			<!-- /wp:column -->
     
     			<!-- wp:column {"verticalAlignment":"center","style":{"spacing":{"blockGap":"8px"}}} -->
     			<div class="wp-block-column is-vertically-aligned-center">
-    				<!-- wp:post-title {"level":3} /-->
+    				<!-- wp:post-title {"level":3,"isLink":true} /-->
     				<!-- wp:post-date {"fontSize":"small"} /-->
     				<!-- wp:post-excerpt {"showMoreOnNewLine":false} /-->
     			</div>
