@@ -501,6 +501,12 @@
           "fontWeight": "600"
         }
       },
+      "core/latest-posts": {
+        "typography": {
+            "fontSize": "var(--wp--preset--font-size--medium)",
+            "fontWeight": "600"
+        }
+      },
       "core/comment-content": {
         "border": {
           "radius": "5px"
