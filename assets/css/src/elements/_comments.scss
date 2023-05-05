@@ -1,0 +1,24 @@
+.comment-form {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-column-gap: 15px;
+
+	> * {
+		grid-column: 1 / span 3;
+	}
+
+	> {
+
+		.comment-form-author,
+		.comment-form-email,
+		.comment-form-url {
+			grid-column: span 1;
+		}
+	}
+
+	textarea,
+	input:not([type="submit"]) {
+
+		@extend %input-base;
+	}
+}

@@ -1,0 +1,27 @@
+// Overwrite the selector...
+.wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
+	background: var(--wp--preset--color--ti-bg);
+	color: var(--wp--preset--color--ti-fg);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open {
+	--navigation-layout-justification-setting: center;
+
+	> .wp-block-navigation__container {
+		gap: 0;
+	}
+
+	// Root menu.
+	.wp-block-navigation__container {
+		gap: 24px !important;
+
+		> li > a {
+			font-size: var(--wp--preset--font-size--large) !important;
+		}
+	}
+
+	// Submenu.
+	.wp-block-navigation__submenu-container {
+		gap: 24px !important;
+	}
+}

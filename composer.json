@@ -1,0 +1,51 @@
+{
+    "name": "codeinwp/neve-fse",
+    "description": "NeveFSE theme by Themeisle",
+    "type": "project",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Themeisle",
+            "email": "friends@themeisle.com",
+            "homepage": "https://themeisle.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "NeveFSE\\": "inc/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "platform-check": false,
+        "platform": {
+            "php": "7.0"
+        },
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "extra": {
+        "installer-disable": "true"
+    },
+    "require": {},
+    "require-dev": {
+        "codeinwp/phpcs-ruleset": "dev-main",
+        "phpunit/phpunit": "^6.5",
+        "automattic/vipwpcs": "^2.3",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
+        "wp-coding-standards/wpcs": "^2.3",
+        "squizlabs/php_codesniffer": "^3.7",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "yoast/phpunit-polyfills": "^1.0"
+    },
+    "scripts": {
+        "format-fix-exit": "\"vendor/bin/phpcbf-fix-exit-0\" --standard=phpcs.xml --report-summary --report-source -s  --runtime-set testVersion 7.0- ",
+        "format": "phpcbf --standard=phpcs.xml --report-summary --report-source -s  --runtime-set testVersion 7.0- ",
+        "phpcs": "phpcs --standard=phpcs.xml -s  --runtime-set testVersion 7.0-",
+        "lint": "composer run-script phpcs",
+        "phpcs-i": "phpcs -i"
+    }
+}

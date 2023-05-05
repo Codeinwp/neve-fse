@@ -1,0 +1,83 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "title": "Crayola",
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "ti-bg",
+          "color": "#FFFFFF",
+          "name": "Background"
+        },
+        {
+          "slug": "ti-fg",
+          "color": "#1F2023",
+          "name": "Foreground"
+        },
+        {
+          "slug": "ti-bg-alt",
+          "color": "#F6F6F6",
+          "name": "Background Alt"
+        },
+        {
+          "slug": "ti-bg-inv",
+          "color": "#14171C",
+          "name": "Background Dark"
+        },
+        {
+          "slug": "ti-fg-alt",
+          "color": "#FFFFFA",
+          "name": "Foreground Alt"
+        },
+        {
+          "slug": "ti-accent",
+          "color": "#F5AB1A",
+          "name": "Accent"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "elements": {
+      "h1": {
+        "typography": {
+          "fontWeight": "600"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontWeight": "600"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontWeight": "600"
+        }
+      },
+      "h4": {
+        "typography": {
+          "fontWeight": "600"
+        }
+      },
+      "h5": {
+        "typography": {
+          "fontWeight": "600"
+        }
+      },
+      "h6": {
+        "typography": {
+          "fontWeight": "600"
+        }
+      }
+    },
+    "heading": {
+      "typography": {
+        "fontFamily": "var(--wp--preset--font-family--inter)"
+      }
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--inter)"
+    }
+  }
+}

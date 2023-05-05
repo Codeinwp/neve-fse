@@ -1,0 +1,15 @@
+node_modules
+
+dist
+artifact
+
+assets/css/build
+assets/js/build
+
+*.log
+*.map
+/vendor/
+
+languages/neve-fse.pot
+
+.DS_Store

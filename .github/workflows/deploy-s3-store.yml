@@ -1,0 +1,62 @@
+name: Deploy
+
+on:
+  push:
+    tags:
+      - "*"
+jobs:
+  deploy:
+    name: Deploy to server
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup node 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Build & create dist/artifact
+        run: |
+          yarn install --frozen-lockfile
+          composer install --no-dev --prefer-dist --no-progress --no-suggest
+          yarn run build
+          yarn run dist
+      - name: Upload Latest Version to S3
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_DOWNLOADS }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.S3_DOWNLOADS_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_DOWNLOADS_AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'us-west-1'     # optional: defaults to us-east-1
+          SOURCE_DIR: 'artifact'      # optional: defaults to entire repository
+          DEST_DIR: ${{ secrets.S3_AWS_PRODUCTS_FOLDER }}/$BUILD_NAME/latest
+      - name: Upload Tagged Version to S3
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_DOWNLOADS }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.S3_DOWNLOADS_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_DOWNLOADS_AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'us-west-1'     # optional: defaults to us-east-1
+          SOURCE_DIR: 'artifact'      # optional: defaults to entire repository
+          DEST_DIR: ${{ secrets.S3_AWS_PRODUCTS_FOLDER }}/$BUILD_NAME/$BUILD_VERSION
+      - name: Send update to the store
+        env:
+          PRODUCT_ID: ${{ secrets.THEMEISLE_ID }}
+          AUTH_TOKEN: ${{ secrets.THEMEISLE_STORE_AUTH }}
+          STORE_URL: ${{ secrets.THEMEISLE_STORE_URL }}
+          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+          BUILD_VERSION: ${{ env.BUILD_VERSION }}
+        uses: Codeinwp/action-store-release@main
