@@ -1,5 +1,5 @@
 ---
-branch: master
+branch: main
 plugins:
   - - "@semantic-release/commit-analyzer"
     - preset: simple-preset
@@ -17,7 +17,7 @@ plugins:
       notifyOnFail: false
       markdownReleaseNotes: true
       branchesConfig:
-        - pattern: master
+        - pattern: main
           notifyOnSuccess: true
           notifyOnFail: false
   - - "@semantic-release/git"

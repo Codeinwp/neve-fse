@@ -7,7 +7,7 @@
       "palette": [
         {
           "slug": "ti-bg",
-          "color": "#F0EBE6",
+          "color": "#F8F4F4",
           "name": "Background"
         },
         {
@@ -27,7 +27,7 @@
         },
         {
           "slug": "ti-fg-alt",
-          "color": "#FFFFFF",
+          "color": "#FFFFFA",
           "name": "Foreground Alt"
         },
         {
@@ -40,6 +40,36 @@
   },
   "styles": {
     "elements": {
+      "h1": {
+        "typography": {
+          "fontWeight": "500"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontWeight": "500"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontWeight": "500"
+        }
+      },
+      "h4": {
+        "typography": {
+          "fontWeight": "500"
+        }
+      },
+      "h5": {
+        "typography": {
+          "fontWeight": "500"
+        }
+      },
+      "h6": {
+        "typography": {
+          "fontWeight": "500"
+        }
+      },
       "heading": {
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--outfit)"

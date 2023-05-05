@@ -3,7 +3,7 @@ name: Test PHP
 on:
   push:
     branches-ignore:
-      - 'master'
+      - 'main'
 
 jobs:
   phplint:

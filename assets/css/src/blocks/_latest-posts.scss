@@ -4,11 +4,14 @@
 		display: block;
 	}
 
+	&.wp-block-latest-posts__list li {
+		margin-bottom: 16px;
+	}
+
 	.wp-block-latest-posts__post-title {
 		display: block;
-		font-size: var(--wp--preset--font-size--medium);
-		font-weight: 600;
-		margin-bottom: 10px;
+		margin-bottom: 8px;
+		text-decoration: none;
 	}
 
 	.wp-block-latest-posts__post-author,

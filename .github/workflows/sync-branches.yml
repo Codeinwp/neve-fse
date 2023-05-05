@@ -2,7 +2,7 @@ name: Sync branches
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
 jobs:
   sync-branch:
     runs-on: ubuntu-latest
@@ -13,10 +13,10 @@ jobs:
         id: retrieve-branch-name
         run: echo "::set-output name=branch_name::$(REF=${GITHUB_HEAD_REF:-$GITHUB_REF} && echo ${REF#refs/heads/} | sed 's/\//-/g')"
       - name: Merge master -> development
-        if: ${{ steps.retrieve-branch-name.outputs.branch_name == 'master' }}
+        if: ${{ steps.retrieve-branch-name.outputs.branch_name == 'main' }}
         uses: Codeinwp/merge-branch@master
         with:
           type: now
-          from_branch: master
+          from_branch: main
           target_branch: development
           github_token: ${{ secrets.BOT_TOKEN }}

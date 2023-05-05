@@ -27,7 +27,7 @@
         },
         {
           "slug": "ti-fg-alt",
-          "color": "#FFFFFF",
+          "color": "#FFFFFA",
           "name": "Foreground Alt"
         },
         {
@@ -69,6 +69,11 @@
         "typography": {
           "fontWeight": "600"
         }
+      }
+    },
+    "heading": {
+      "typography": {
+        "fontFamily": "var(--wp--preset--font-family--inter)"
       }
     },
     "typography": {

@@ -50,7 +50,7 @@
         },
         {
           "slug": "ti-bg-alt",
-          "color": "var(--nv-light-bg, #EDEAE4)",
+          "color": "var(--nv-light-bg, #f7f7f3)",
           "name": "Background Alt"
         },
         {
@@ -65,7 +65,7 @@
         },
         {
           "slug": "ti-accent",
-          "color": "var(--nv-primary-accent, #435DEB)",
+          "color": "var(--nv-primary-accent, #325ce8)",
           "name": "Accent"
         }
       ],
@@ -410,15 +410,15 @@
     },
     "typography": {
       "fontSize": "var(--neve-font-size-body, var(--wp--preset--font-size--normal))",
-      "fontFamily": "var(--neve-font-family-heading, var( --wp--preset--font-family--figtree, '\"Figtree\", sans-serif'))",
+      "fontFamily": "var(--neve-font-family-heading, var( --wp--preset--font-family--inter, '\"Inter\", sans-serif'))",
       "fontWeight": "var(--neve-font-weight-body, 400)",
       "lineHeight": "var(--neve-font-line-height-body, 1.7)"
     },
     "elements": {
       "heading": {
         "typography": {
-          "fontFamily": "var(--neve-font-family-heading, var( --wp--preset--font-family--figtree, '\"Figtree\", sans-serif'))",
-          "fontWeight": "var(--neve-font-weight-heading, 500)",
+          "fontFamily": "var(--neve-font-family-heading, var( --wp--preset--font-family--inter, '\"Inter\", sans-serif'))",
+          "fontWeight": "var(--neve-font-weight-heading, 600)",
           "lineHeight": "var(--neve-font-line-height-heading, 1.3)",
           "fontSize": "var(--neve-font-size-heading, var(--wp--preset--font-size--huge))"
         }
@@ -431,57 +431,58 @@
       "h1": {
         "typography": {
           "fontSize": "var(--neve-font-size-h1, var(--wp--preset--font-size--huge))",
-          "fontWeight": "var(--neve-font-weight-h1, 500)",
+          "fontWeight": "var(--neve-font-weight-h1, 600)",
           "lineHeight": "var(--neve-font-line-height-h1, 1.25)"
         }
       },
       "h2": {
         "typography": {
           "fontSize": "var(--neve-font-size-h2, var(--wp--preset--font-size--x-large))",
-          "fontWeight": "var(--neve-font-weight-h2, 500)",
+          "fontWeight": "var(--neve-font-weight-h2, 600)",
           "lineHeight": "var(--neve-font-line-height-h2, 1.35)"
         }
       },
       "h3": {
         "typography": {
           "fontSize": "var(--neve-font-size-h3, var(--wp--preset--font-size--large))",
-          "fontWeight": "var(--neve-font-weight-h3, 500)",
+          "fontWeight": "var(--neve-font-weight-h3, 600)",
           "lineHeight": "var(--neve-font-line-height-h3, 1.35)"
         }
       },
       "h4": {
         "typography": {
           "fontSize": "var(--neve-font-size-h4, var(--wp--preset--font-size--medium))",
-          "fontWeight": "var(--neve-font-weight-h4, 500)",
+          "fontWeight": "var(--neve-font-weight-h4, 600)",
           "lineHeight": "var(--neve-font-line-height-h4, 1.4)"
         }
       },
       "h5": {
         "typography": {
           "fontSize": "var(--neve-font-size-h5, var(--wp--preset--font-size--normal))",
-          "fontWeight": "var(--neve-font-weight-h5, 500)",
+          "fontWeight": "var(--neve-font-weight-h5, 600)",
           "lineHeight": "var(--neve-font-line-height-h5, 1.55)"
         }
       },
       "h6": {
         "typography": {
           "fontSize": "var(--neve-font-size-h6, var(--wp--preset--font-size--small))",
-          "fontWeight": "var(--neve-font-weight-h6, 500)",
+          "fontWeight": "var(--neve-font-weight-h6, 600)",
           "lineHeight": "var(--neve-font-line-height-h6, 1.6)"
         }
       }
     },
     "blocks": {
+      "core/site-logo": {
+         "dimensions": {
+            "width": "48"
+         }
+      },
       "core/button": {
         "border": {
-<<<<<<< Updated upstream
-          "radius": "var(--neve-button-border-radius, 9999px)"
-=======
           "radius": "var(--neve-button-border-radius, 5px)",
           "width": "2px",
           "style": "solid",
           "color": "var(--wp--preset--color--ti-accent)"
->>>>>>> Stashed changes
         },
         "color": {
           "background": "var(--wp--preset--color--ti-accent)",
@@ -500,6 +501,12 @@
           "fontWeight": "600"
         }
       },
+      "core/latest-posts": {
+        "typography": {
+            "fontSize": "var(--wp--preset--font-size--medium)",
+            "fontWeight": "600"
+        }
+      },
       "core/comment-content": {
         "border": {
           "radius": "5px"
@@ -509,10 +516,10 @@
         },
         "spacing": {
           "padding": {
-            "bottom": "24px",
-            "left": "24px",
-            "right": "24px",
-            "top": "24px"
+            "bottom": "16px",
+            "left": "16px",
+            "right": "16px",
+            "top": "16px"
           }
         }
       },
@@ -639,12 +646,42 @@
     },
     {
       "name": "header_s1",
-      "title": "Header Variation",
+      "title": "Header Variation - Centered",
+      "area": "header"
+    },
+    {
+      "name": "header_s2",
+      "title": "Header Variation - Button",
+      "area": "header"
+    },
+    {
+      "name": "header_s3",
+      "title": "Header Variation - Hamburger Menu",
       "area": "header"
     },
     {
       "name": "footer",
       "title": "Footer",
+      "area": "footer"
+    },
+    {
+      "name": "footer_s1",
+      "title": "Footer Variation - Site Logo",
+      "area": "footer"
+    },
+    {
+      "name": "footer_s2",
+      "title": "Footer Variation - 3 Columns",
+      "area": "footer"
+    },
+    {
+      "name": "footer_s3",
+      "title": "Footer Variation - 4 Columns",
+      "area": "footer"
+    },
+    {
+      "name": "footer_s4",
+      "title": "Footer Variation - 5 Columns",
       "area": "footer"
     }
   ]
