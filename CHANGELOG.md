@@ -1,3 +1,8 @@
+####   Version 1.0.0 (2023-05-05)
+
+Initial Release
+Initial Release
+
 ##### [Version 1.0.2](https://github.com/Codeinwp/neve-fse/compare/v1.0.1...v1.0.2) (2022-12-27)
 
 - change theme screenshot
