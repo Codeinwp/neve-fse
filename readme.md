@@ -16,12 +16,17 @@ Neve FSE is distributed under the terms of the GNU GPLv2 or later
 
 ## Changelog ##
 
-####   Version 1.0.0 (2022-12-12)
+####   Version 1.0.0 (2023-05-05)
+
+Initial Release
+Initial Release
+
+
+
+
+####   Version 1.0.0 (2023-05-05)
 
 - Initial release
-
-
-
 
 
 ## Resources ##
@@ -45,3 +50,4 @@ Themeisle Free Icons - https://themeisle.com/free-icons:
 * img-neve-fse-10.png - https://negativespace.co/man-writing-notepad/
 * img-neve-fse-11.png - https://www.rawpixel.com/image/5920695/photo-image-book-public-domain-technology
 * img-neve-fse-12.png - https://pxhere.com/en/photo/13688
+

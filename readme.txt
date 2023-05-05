@@ -18,6 +18,14 @@ Neve FSE is distributed under the terms of the GNU GPLv2 or later
 
 ####   Version 1.0.0 (2023-05-05)
 
+Initial Release
+Initial Release
+
+
+
+
+####   Version 1.0.0 (2023-05-05)
+
 - Initial release
 
 
