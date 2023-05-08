@@ -16,6 +16,13 @@ Neve FSE is distributed under the terms of the GNU GPLv2 or later
 
 ## Changelog ##
 
+##### [Version 1.0.1](https://github.com/Codeinwp/neve-fse/compare/v1.0.0...v1.0.1) (2023-05-08)
+
+Removed extra filter
+
+
+
+
 ####   Version 1.0.0 (2023-05-05)
 
 Initial Release
