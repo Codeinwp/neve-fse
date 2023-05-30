@@ -106,6 +106,7 @@ class Admin {
 			return;
 		}
 
+		Assets_Manager::enqueue_style( Assets_Manager::ASSETS_SLUGS['welcome-notice'], 'welcome-notice' );
 		Assets_Manager::enqueue_script(
 			Assets_Manager::ASSETS_SLUGS['general-notice'],
 			'general-notice',
@@ -120,20 +121,27 @@ class Admin {
 			'surveyFSENoticeData'
 		);
 
-		$cta_link = sprintf(
-			'<a href="%s" target="_blank" rel="noopener noreferrer">%s<span class="dashicons dashicons-external" style="text-decoration: none; font-size: 16px"></span></a>',
-			esc_url( 'https://hi507076.typeform.com/neve-fse' ),
-			__( 'Take the survey', 'neve-fse' )
-		);
-
 		$survey_notice  = '<div class="notice notice-info is-dismissible neve-fse-survey-notice">';
-		$survey_notice .= '<p>';
-		$survey_notice .= sprintf(
-			/* translators: %s - Survey link */
-			__( 'We value your feedback! Join us in making Neve FSE even better by sharing your insights through a quick survey today! %s', 'neve-fse' ),
-			$cta_link
-		);
-		$survey_notice .= '</div>';
+		$survey_notice .= '<div class="notice-content">';
+		$survey_notice .= '<img class="neve-fse-logo" src="' . esc_url( Assets_Manager::get_image_url( 'neve-fse-logo.svg' ) ) . '" alt="' . esc_attr__( 'Neve FSE Logo', 'neve-fse' ) . '"/>';
+		$survey_notice .= '<div class="notice-copy">';
+		$survey_notice .= '<h1 class="notice-title">' . __( 'We value your feedback', 'neve-fse' ) . '</h1>';
+		$survey_notice .= '<p class="description">';
+		$survey_notice .= __( 'Thank you for trying Neve FSE. We would love to hear your thoughts on how we can enhance and improve the theme even further. Would you mind taking a moment to share your insights through a quick survey?', 'neve-fse' );
+		$survey_notice .= '</p>';
+		$survey_notice .= '<div class="actions">';
+		/* translators: %s: Otter Blocks */
+		$survey_notice .= '<a id="neve-fse-take-survey" target="_blank" rel="noopener noreferrer" href="' . esc_url( 'https://hi507076.typeform.com/neve-fse' ) . '" class="button button-primary button-hero">';
+		$survey_notice .= '<span class="text">' . __( 'Take the survey', 'neve-fse' ) . '</span>';
+		$survey_notice .= '<span class="dashicons dashicons-external"></span>';
+		$survey_notice .= '</a>';
+		$survey_notice .= '<button class="button button-secondary button-hero later-dismiss">';
+		$survey_notice .= '<span>' . __( 'Maybe later', 'neve-fse' ) . '</span>';
+		$survey_notice .= '</button>';
+		$survey_notice .= '</div>'; // actions.
+		$survey_notice .= '</div>'; // notice-copy.
+		$survey_notice .= '</div>'; // notice-content.
+		$survey_notice .= '</div>'; // notice.
 
 		echo wp_kses_post( $survey_notice );
 	}

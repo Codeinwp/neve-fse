@@ -24,6 +24,16 @@ function handleGeneralNotice( $ ) {
 		} );
 	} );
 
+	const laterDismiss = $( `.${ surveyClass } .later-dismiss` );
+
+	if ( ! laterDismiss.length ) {
+		return;
+	}
+
+	$( laterDismiss ).on( 'click', () => {
+		hideAndRemoveGeneralNotice( $( '.' + surveyClass ) );
+	} );
+
 	/**
 	 * Hide and remove the notice.
 	 *
