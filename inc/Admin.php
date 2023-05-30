@@ -18,6 +18,21 @@ class Admin {
 	 */
 	public function __construct() {
 		$this->setup_otter_notice();
+		$this->add_install_time();
+	}
+
+	/**
+	 * Add the installation time.
+	 * This is needed here while the SDK is not available.
+	 * Once the SDK is available, this can safely be removed.
+	 *
+	 * @return void
+	 */
+	private function add_install_time() {
+		$install = get_option( Constants::PRODUCT_KEY . '_install', 0 );
+		if ( 0 === $install ) {
+			update_option( Constants::PRODUCT_KEY . '_install', time() );
+		}
 	}
 
 
@@ -28,7 +43,99 @@ class Admin {
 	 */
 	public function setup_otter_notice() {
 		add_action( 'admin_notices', array( $this, 'render_welcome_notice' ), 0 );
+		add_action( 'admin_notices', array( $this, 'render_survey_notice' ) );
 		add_action( 'wp_ajax_neve_fse_dismiss_welcome_notice', array( $this, 'remove_welcome_notice' ) );
+		add_action( 'wp_ajax_neve_fse_dismiss_survey_notice', array( $this, 'remove_survey_notice' ) );
+	}
+
+	/**
+	 * Determine if the survey notice should be shown.
+	 *
+	 * @return bool
+	 */
+	public function should_show_survey_notice() {
+
+		// Notice was dismissed.
+		if ( get_option( Constants::CACHE_KEYS['dismissed-survey-notice'], 'no' ) === 'yes' ) {
+			return false;
+		}
+
+		$screen = get_current_screen();
+
+		// Only show in dashboard/themes.
+		if ( ! in_array( $screen->id, array( 'dashboard', 'themes' ) ) ) {
+			return false;
+		}
+
+		// AJAX actions.
+		if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+			return false;
+		}
+
+		// Don't show in network admin.
+		if ( is_network_admin() ) {
+			return false;
+		}
+
+		// User can't dismiss. We don't show it.
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return false;
+		}
+
+		// Block editor context.
+		if ( $screen->is_block_editor() ) {
+			return false;
+		}
+
+		// If has been activated for less than 3 days, don't show it.
+		$activated_time = get_option( 'neve_fse_install' );
+		if ( ! empty( $activated_time ) && time() - intval( $activated_time ) < 3 * DAY_IN_SECONDS ) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * Display the survey notice.
+	 *
+	 * @return void
+	 */
+	public function render_survey_notice() {
+		if ( ! $this->should_show_survey_notice() ) {
+			return;
+		}
+
+		Assets_Manager::enqueue_script(
+			Assets_Manager::ASSETS_SLUGS['general-notice'],
+			'general-notice',
+			true,
+			array(),
+			array(
+				'nonce'        => wp_create_nonce( 'neve-fse-dismiss-survey-notice' ),
+				'ajaxUrl'      => esc_url( admin_url( 'admin-ajax.php' ) ),
+				'surveyClass'  => 'neve-fse-survey-notice',
+				'surveyAction' => 'neve_fse_dismiss_survey_notice',
+			),
+			'surveyFSENoticeData'
+		);
+
+		$cta_link = sprintf(
+			'<a href="%s" target="_blank" rel="noopener noreferrer">%s<span class="dashicons dashicons-external" style="text-decoration: none; font-size: 16px"></span></a>',
+			esc_url( 'https://hi507076.typeform.com/neve-fse' ),
+			__( 'Take the survey', 'neve-fse' )
+		);
+
+		$survey_notice  = '<div class="notice notice-info is-dismissible neve-fse-survey-notice">';
+		$survey_notice .= '<p>';
+		$survey_notice .= sprintf(
+			/* translators: %s - Survey link */
+			__( 'We value your feedback! Join us in making Neve FSE even better by sharing your insights through a quick survey today! %s', 'neve-fse' ),
+			$cta_link
+		);
+		$survey_notice .= '</div>';
+
+		echo wp_kses_post( $survey_notice );
 	}
 
 	/**
@@ -62,13 +169,13 @@ class Admin {
 							'plugin'        => rawurlencode( 'otter-blocks/otter-blocks.php' ),
 							'_wpnonce'      => wp_create_nonce( 'activate-plugin_otter-blocks/otter-blocks.php' ),
 						),
-						admin_url( 'plugins.php' ) 
-					) 
+						admin_url( 'plugins.php' )
+					)
 				),
 				'activating'    => __( 'Activating', 'neve-fse' ) . '&hellip;',
 				'installing'    => __( 'Installing', 'neve-fse' ) . '&hellip;',
 				'done'          => __( 'Done', 'neve-fse' ),
-			) 
+			)
 		);
 
 		$notice_html  = '<div class="notice notice-info neve-fse-welcome-notice">';
@@ -129,6 +236,22 @@ class Admin {
 			return;
 		}
 		update_option( Constants::CACHE_KEYS['dismissed-welcome-notice'], 'yes' );
+		wp_die();
+	}
+
+	/**
+	 * Dismiss the survey notice.
+	 *
+	 * @return void
+	 */
+	public function remove_survey_notice() {
+		if ( ! isset( $_POST['nonce'] ) ) {
+			return;
+		}
+		if ( ! wp_verify_nonce( sanitize_text_field( $_POST['nonce'] ), 'neve-fse-dismiss-survey-notice' ) ) {
+			return;
+		}
+		update_option( Constants::CACHE_KEYS['dismissed-survey-notice'], 'yes' );
 		wp_die();
 	}
 

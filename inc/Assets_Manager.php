@@ -19,6 +19,7 @@ class Assets_Manager {
 		'frontend-css'   => 'neve-fse-style',
 		'editor-css'     => 'neve-fse-editor',
 		'welcome-notice' => 'neve-fse-welcome-notice',
+		'general-notice' => 'neve-fse-general-notice',
 	);
 
 	const AVAILABLE_THEME_FONTS = array(
