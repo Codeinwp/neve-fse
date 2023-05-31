@@ -18,6 +18,11 @@ body {
 	flex-direction: column;
 }
 
+header .is-position-sticky {
+	position: fixed;
+	width: 100% !important;
+}
+
 // Push footer to bottom.
 footer {
 	margin-block-start: auto !important;
