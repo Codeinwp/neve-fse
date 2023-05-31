@@ -53,7 +53,7 @@ function handleWelcomeNotice( $ ) {
 	$( dismissBtn ).on( 'click', () => {
 		$.post( ajaxUrl, {
 			nonce,
-			action: 'neve-fse_dismiss_welcome_notice',
+			action: 'neve_fse_dismiss_welcome_notice',
 			success: hideAndRemoveNotice,
 		} );
 	} );
