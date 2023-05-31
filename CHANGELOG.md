@@ -1,3 +1,10 @@
+##### [Version 1.0.3](https://github.com/Codeinwp/neve-fse/compare/v1.0.2...v1.0.3) (2023-05-31)
+
+- Feat: Added survey notice
+- Fix: Add rule to enforce sticky for header
+- Fix: Single cover layout structure
+- Updated theme description
+
 ##### [Version 1.0.2](https://github.com/Codeinwp/neve-fse/compare/v1.0.1...v1.0.2) (2023-05-10)
 
 - Fix: Update Screenshot for theme
