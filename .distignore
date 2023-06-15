@@ -53,3 +53,5 @@ lint-staged.config.js
 .stylelintrc.json
 phpstan.neon
 .gitkeep
+assets/js/src
+assets/css/src
