@@ -27,6 +27,8 @@ function bootstrap() {
 
 	maybe_add_notices();
 
+	load_sdk();
+
 	load_dependencies();
 
 	run();
@@ -130,6 +132,22 @@ function maybe_add_notices() {
 			global $_neve_fse_bootstrap_errors;
 
 			printf( '<div class="notice notice-error"><p>%1$s</p></div>', wp_kses_post( $_neve_fse_bootstrap_errors->get_error_message() ) );
+		}
+	);
+}
+
+/**
+ * Load SDK.
+ *
+ * @return void
+ */
+function load_sdk() {
+	add_filter(
+		'themeisle_sdk_products',
+		function ( $products ) {
+			$products[] = NEVE_FSE_DIR . 'style.css';
+
+			return $products;
 		}
 	);
 }

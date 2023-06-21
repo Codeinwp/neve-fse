@@ -13,7 +13,10 @@
     "autoload": {
         "psr-4": {
             "NeveFSE\\": "inc/"
-        }
+        },
+        "files": [
+            "vendor/codeinwp/themeisle-sdk/load.php"
+        ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -30,7 +33,9 @@
     "extra": {
         "installer-disable": "true"
     },
-    "require": {},
+    "require": {
+        "codeinwp/themeisle-sdk": "^3.3"
+    },
     "require-dev": {
         "codeinwp/phpcs-ruleset": "dev-main",
         "phpunit/phpunit": "^6.5",
