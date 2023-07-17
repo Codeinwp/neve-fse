@@ -16,6 +16,17 @@ Neve FSE is distributed under the terms of the GNU GPLv2 or later
 
 == Changelog ==
 
+##### [Version 1.0.4](https://github.com/Codeinwp/neve-fse/compare/v1.0.3...v1.0.4) (2023-07-17)
+
+- [Feat] Update action to deploy to WordPress svn
+- [Fix] Updated and compressed images
+- [Fix] Exclude JS and CSS sources
+- Added SDK
+- Update dependencies
+
+
+
+
 ##### [Version 1.0.3](https://github.com/Codeinwp/neve-fse/compare/v1.0.2...v1.0.3) (2023-05-31)
 
 - Feat: Added survey notice
