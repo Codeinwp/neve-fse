@@ -60,3 +60,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
           BUILD_VERSION: ${{ env.BUILD_VERSION }}
         uses: Codeinwp/action-store-release@main
+      - name: WordPress Theme Deploy
+        uses: Codeinwp/action-wordpress-theme-deploy@primary
+        env:
+          SVN_PASSWORD: ${{ secrets.SVN_THEMEISLE_PASSWORD }}
+          SVN_USERNAME: ${{ secrets.SVN_THEMEISLE_USERNAME }}

@@ -4,8 +4,49 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c87f0e8d8d7a892560151deccec8459",
-    "packages": [],
+    "content-hash": "8ad880dfafb8f9da34cb2b72ed68c3ba",
+    "packages": [
+        {
+            "name": "codeinwp/themeisle-sdk",
+            "version": "3.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Codeinwp/themeisle-sdk.git",
+                "reference": "efb66935e69935b21ad99b0e55484e611ce4549d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Codeinwp/themeisle-sdk/zipball/efb66935e69935b21ad99b0e55484e611ce4549d",
+                "reference": "efb66935e69935b21ad99b0e55484e611ce4549d",
+                "shasum": ""
+            },
+            "require-dev": {
+                "codeinwp/phpcs-ruleset": "dev-main"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "ThemeIsle team",
+                    "email": "friends@themeisle.com",
+                    "homepage": "https://themeisle.com"
+                }
+            ],
+            "description": "ThemeIsle SDK",
+            "homepage": "https://github.com/Codeinwp/themeisle-sdk",
+            "keywords": [
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/Codeinwp/themeisle-sdk/issues",
+                "source": "https://github.com/Codeinwp/themeisle-sdk/tree/v3.3.1"
+            },
+            "time": "2023-06-21T06:55:46+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "automattic/vipwpcs",
@@ -2278,21 +2319,21 @@
         },
         {
             "name": "yoast/phpunit-polyfills",
-            "version": "1.0.5",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Yoast/PHPUnit-Polyfills.git",
-                "reference": "3b59adeef77fb1c03ff5381dbb9d68b0aaff3171"
+                "reference": "c758753e8f9dac251fed396a73c8305af3f17922"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Yoast/PHPUnit-Polyfills/zipball/3b59adeef77fb1c03ff5381dbb9d68b0aaff3171",
-                "reference": "3b59adeef77fb1c03ff5381dbb9d68b0aaff3171",
+                "url": "https://api.github.com/repos/Yoast/PHPUnit-Polyfills/zipball/c758753e8f9dac251fed396a73c8305af3f17922",
+                "reference": "c758753e8f9dac251fed396a73c8305af3f17922",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4",
-                "phpunit/phpunit": "^4.8.36 || ^5.7.21 || ^6.0 || ^7.0 || ^8.0 || ^9.0"
+                "php": ">=5.6",
+                "phpunit/phpunit": "^5.7.21 || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0"
             },
             "require-dev": {
                 "yoast/yoastcs": "^2.3.0"
@@ -2334,7 +2375,7 @@
                 "issues": "https://github.com/Yoast/PHPUnit-Polyfills/issues",
                 "source": "https://github.com/Yoast/PHPUnit-Polyfills"
             },
-            "time": "2023-03-30T23:39:05+00:00"
+            "time": "2023-06-06T20:28:24+00:00"
         }
     ],
     "aliases": [],
