@@ -1,3 +1,5 @@
+@custom-media --mobile (max-width: 481px);
+
 * {
 	box-sizing: border-box;
 }
@@ -76,4 +78,15 @@ body .wp-block-button.is-style-outline > .wp-block-button__link,
 body .wp-block-button .wp-block-button__link.is-style-outline {
 	border: 2px solid;
 	padding: 16px 40px;
+
+	@media (--mobile) {
+		padding: 16px 20px;
+	}
+}
+
+body .wp-block-button .wp-block-button__link {
+
+	@media (--mobile) {
+		padding: 16px 20px;
+	}
 }
