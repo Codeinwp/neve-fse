@@ -6,7 +6,6 @@ on:
     types: [opened, edited, synchronize, ready_for_review]
     branches:
       - 'development'
-      - 'feat/translation_diff_job'
 
 jobs:
   translation:
