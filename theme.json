@@ -49,9 +49,9 @@
           "name": "Foreground"
         },
         {
-          "slug": "ti-bg-alt",
-          "color": "var(--nv-light-bg, #f7f7f3)",
-          "name": "Background Alt"
+          "slug": "ti-accent",
+          "color": "var(--nv-primary-accent, #325ce8)",
+          "name": "Accent"
         },
         {
           "slug": "ti-bg-inv",
@@ -59,14 +59,14 @@
           "name": "Background Dark"
         },
         {
+          "slug": "ti-bg-alt",
+          "color": "var(--nv-light-bg, #f7f7f3)",
+          "name": "Background Alt"
+        },
+        {
           "slug": "ti-fg-alt",
           "color": "var(--nv-text-dark-bg, #FBFBFB)",
           "name": "Foreground Alt"
-        },
-        {
-          "slug": "ti-accent",
-          "color": "var(--nv-primary-accent, #325ce8)",
-          "name": "Accent"
         }
       ],
       "link": true,

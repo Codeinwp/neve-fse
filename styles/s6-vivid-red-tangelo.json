@@ -16,6 +16,11 @@
           "name": "Foreground"
         },
         {
+          "slug": "ti-accent",
+          "color": "#DF6018",
+          "name": "Accent"
+        },
+        {
           "slug": "ti-bg-alt",
           "color": "#0E313E",
           "name": "Background Alt"
@@ -29,11 +34,6 @@
           "slug": "ti-fg-alt",
           "color": "#FFFFFA",
           "name": "Foreground Alt"
-        },
-        {
-          "slug": "ti-accent",
-          "color": "#DF6018",
-          "name": "Accent"
         }
       ]
     }
