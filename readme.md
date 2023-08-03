@@ -2,7 +2,7 @@
 **Contributors:** [themeisle](https://profiles.wordpress.org/themeisle/)  
 **Tags:** block-patterns  
 **Requires at least:** 5.5  
-**Tested up to:** 6.3 
+**Tested up to:** 6.3  
 **Stable tag:** trunk  
 **Requires PHP:** 7.0  
 **License:** GPLv2 or later  
@@ -15,6 +15,15 @@ Neve FSE WordPress theme, Copyright 2023 Themeisle
 Neve FSE is distributed under the terms of the GNU GPLv2 or later
 
 ## Changelog ##
+
+##### [Version 1.0.5](https://github.com/Codeinwp/neve-fse/compare/v1.0.4...v1.0.5) (2023-08-03)
+
+- [Feat] Change the padding for Primary and Secondary buttons on mobile
+- [Fix] Duplicated title tag when RankMath is active
+- Improve style variations preview inside the editor
+
+
+
 
 ##### [Version 1.0.4](https://github.com/Codeinwp/neve-fse/compare/v1.0.3...v1.0.4) (2023-07-17)
 
