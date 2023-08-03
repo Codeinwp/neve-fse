@@ -16,6 +16,15 @@ Neve FSE is distributed under the terms of the GNU GPLv2 or later
 
 == Changelog ==
 
+##### [Version 1.0.5](https://github.com/Codeinwp/neve-fse/compare/v1.0.4...v1.0.5) (2023-08-03)
+
+- [Feat] Change the padding for Primary and Secondary buttons on mobile
+- [Fix] Duplicated title tag when RankMath is active
+- Improve style variations preview inside the editor
+
+
+
+
 ##### [Version 1.0.4](https://github.com/Codeinwp/neve-fse/compare/v1.0.3...v1.0.4) (2023-07-17)
 
 - [Feat] Update action to deploy to WordPress svn
