@@ -2,7 +2,7 @@
 **Contributors:** [themeisle](https://profiles.wordpress.org/themeisle/)  
 **Tags:** block-patterns  
 **Requires at least:** 5.5  
-**Tested up to:** 6.1  
+**Tested up to:** 6.3 
 **Stable tag:** trunk  
 **Requires PHP:** 7.0  
 **License:** GPLv2 or later  
@@ -85,4 +85,3 @@ Themeisle Free Icons - https://themeisle.com/free-icons:
 * img-neve-fse-10.png - https://negativespace.co/man-writing-notepad/
 * img-neve-fse-11.png - https://www.rawpixel.com/image/5920695/photo-image-book-public-domain-technology
 * img-neve-fse-12.png - https://pxhere.com/en/photo/13688
-
