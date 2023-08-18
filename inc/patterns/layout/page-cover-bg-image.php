@@ -21,8 +21,8 @@ return array(
 	'categories' => array( 'neve-fse' ),
 	'keywords'   => array( 'call to action', 'page cover', 'inverted', 'dark' ),
 	'content'    => '
-<!-- wp:cover {"url":"' . esc_url( $cover_image ) . '","dimRatio":50,"overlayColor":"ti-bg-inv","minHeight":50,"minHeightUnit":"vh","contentPosition":"center center","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"24px","right":"24px","bottom":"24px","left":"24px"},"margin":{"top":"0","bottom":"0"}}}} -->
-<div class="wp-block-cover alignfull is-light" style="margin-top:0;margin-bottom:0;padding-top:24px;padding-right:24px;padding-bottom:24px;padding-left:24px;min-height:50vh">
+<!-- wp:cover {"url":"' . esc_url( $cover_image ) . '","dimRatio":50,"overlayColor":"ti-bg-inv","minHeight":500,"minHeightUnit":"px","contentPosition":"center center","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"24px","right":"24px","bottom":"24px","left":"24px"},"margin":{"top":"0","bottom":"0"}}}} -->
+<div class="wp-block-cover alignfull is-light" style="margin-top:0;margin-bottom:0;padding-top:24px;padding-right:24px;padding-bottom:24px;padding-left:24px;min-height:500px">
     <span aria-hidden="true" class="wp-block-cover__background has-ti-bg-inv-background-color has-background-dim"></span>
     <img class="wp-block-cover__image-background" alt="" src="' . esc_url( $cover_image ) . '" data-object-fit="cover"/>
     <div class="wp-block-cover__inner-container">
