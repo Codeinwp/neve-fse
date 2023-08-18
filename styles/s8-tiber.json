@@ -81,6 +81,14 @@
 				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--normal)"
+				},
+        "spacing": {
+					"padding": {
+						"bottom": "10px",
+						"left": "20px",
+						"right": "20px",
+						"top": "10px"
+					}
 				}
 			}
     },
