@@ -36,6 +36,16 @@
       }
     },
     "color": {
+      "duotone": [
+				{
+					"colors": [
+						"#325ce8",
+						"#FFFFFF"
+					],
+					"slug": "default-neve-overlay",
+					"name": "Default Neve overlay"
+				}
+			],
       "palette": [
         {
           "slug": "ti-bg",

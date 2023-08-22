@@ -4,6 +4,16 @@
   "version": 2,
   "settings": {
     "color": {
+      "duotone": [
+				{
+					"colors": [
+						"#007afc",
+						"#FFFFFF"
+					],
+					"slug": "default-neve-overlay",
+					"name": "Default Neve overlay"
+				}
+			],
       "palette": [
         {
           "slug": "ti-bg",
@@ -14,6 +24,11 @@
           "slug": "ti-fg",
           "color": "#f5f5f7",
           "name": "Foreground"
+        },
+        {
+          "slug": "ti-accent",
+          "color": "#007afc",
+          "name": "Accent"
         },
         {
           "slug": "ti-bg-alt",
@@ -29,11 +44,6 @@
           "slug": "ti-fg-alt",
           "color": "#FFFFFA",
           "name": "Foreground Alt"
-        },
-        {
-          "slug": "ti-accent",
-          "color": "#007afc",
-          "name": "Accent"
         }
       ]
     }
