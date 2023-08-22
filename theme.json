@@ -10,8 +10,7 @@
           "horizontal": "clamp( calc( 1.5 * var( --wp--custom--spacing--baseline ) ), 2.222vw, calc( 2 * var( --wp--custom--spacing--baseline ) ) )",
           "vertical": "clamp( calc( 1.5 * var( --wp--custom--spacing--baseline ) ), 3.333vw, calc( 3 * var( --wp--custom--spacing--baseline ) ) )"
         },
-        "gutter": "clamp( calc( 1.5 * var( --wp--custom--spacing--baseline ) ), 3.333vw, calc( 3 * var( --wp--custom--spacing--baseline ) ) )",
-        "outer": "var( --wp--custom--spacing--gutter )"
+        "gutter": "clamp( calc( 1.5 * var( --wp--custom--spacing--baseline ) ), 3.333vw, calc( 3 * var( --wp--custom--spacing--baseline ) ) )"
       },
       "typography": {
         "fontSmoothing": {
@@ -49,9 +48,9 @@
           "name": "Foreground"
         },
         {
-          "slug": "ti-bg-alt",
-          "color": "var(--nv-light-bg, #f7f7f3)",
-          "name": "Background Alt"
+          "slug": "ti-accent",
+          "color": "var(--nv-primary-accent, #325ce8)",
+          "name": "Accent"
         },
         {
           "slug": "ti-bg-inv",
@@ -59,14 +58,14 @@
           "name": "Background Dark"
         },
         {
+          "slug": "ti-bg-alt",
+          "color": "var(--nv-light-bg, #f7f7f3)",
+          "name": "Background Alt"
+        },
+        {
           "slug": "ti-fg-alt",
           "color": "var(--nv-text-dark-bg, #FBFBFB)",
           "name": "Foreground Alt"
-        },
-        {
-          "slug": "ti-accent",
-          "color": "var(--nv-primary-accent, #325ce8)",
-          "name": "Accent"
         }
       ],
       "link": true,
