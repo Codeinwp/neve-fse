@@ -1,13 +1,13 @@
 {
   "$schema": "https://schemas.wp.org/trunk/theme.json",
-  "title": "Crayola",
+  "title": "Mono Blue",
   "version": 2,
   "settings": {
     "color": {
       "duotone": [
 				{
 					"colors": [
-						"#F5AB1A",
+						"#2242A0",
 						"#FFFFFF"
 					],
 					"slug": "default-neve-overlay",
@@ -17,32 +17,32 @@
       "palette": [
         {
           "slug": "ti-bg",
-          "color": "#FFFFFF",
+          "color": "#E2E8F9",
           "name": "Background"
         },
         {
           "slug": "ti-fg",
-          "color": "#1F2023",
+          "color": "#313132",
           "name": "Foreground"
         },
         {
           "slug": "ti-accent",
-          "color": "#F5AB1A",
+          "color": "#2242A0",
           "name": "Accent"
         },
         {
           "slug": "ti-bg-inv",
-          "color": "#14171C",
+          "color": "#182F71",
           "name": "Background Dark"
         },
         {
           "slug": "ti-bg-alt",
-          "color": "#F6F6F6",
+          "color": "#EEF2FC",
           "name": "Background Alt"
         },
         {
           "slug": "ti-fg-alt",
-          "color": "#FFFFFA",
+          "color": "#EEF2FC",
           "name": "Foreground Alt"
         }
       ]

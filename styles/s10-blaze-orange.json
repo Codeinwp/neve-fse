@@ -1,13 +1,13 @@
 {
   "$schema": "https://schemas.wp.org/trunk/theme.json",
-  "title": "Crayola",
+  "title": "Hippie Green",
   "version": 2,
   "settings": {
     "color": {
       "duotone": [
 				{
 					"colors": [
-						"#F5AB1A",
+						"#007afc",
 						"#FFFFFF"
 					],
 					"slug": "default-neve-overlay",
@@ -17,27 +17,27 @@
       "palette": [
         {
           "slug": "ti-bg",
-          "color": "#FFFFFF",
+          "color": "#0e1012",
           "name": "Background"
         },
         {
           "slug": "ti-fg",
-          "color": "#1F2023",
+          "color": "#f5f5f7",
           "name": "Foreground"
         },
         {
           "slug": "ti-accent",
-          "color": "#F5AB1A",
+          "color": "#007afc",
           "name": "Accent"
         },
         {
           "slug": "ti-bg-inv",
-          "color": "#14171C",
+          "color": "#000000",
           "name": "Background Dark"
         },
         {
           "slug": "ti-bg-alt",
-          "color": "#F6F6F6",
+          "color": "#161A1D",
           "name": "Background Alt"
         },
         {
