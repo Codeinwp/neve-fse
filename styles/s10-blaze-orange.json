@@ -7,7 +7,7 @@
       "duotone": [
 				{
 					"colors": [
-						"#007afc",
+						"#FF6602",
 						"#FFFFFF"
 					],
 					"slug": "default-neve-overlay",
@@ -17,17 +17,17 @@
       "palette": [
         {
           "slug": "ti-bg",
-          "color": "#0e1012",
+          "color": "#FFFFFF",
           "name": "Background"
         },
         {
           "slug": "ti-fg",
-          "color": "#f5f5f7",
+          "color": "#202020",
           "name": "Foreground"
         },
         {
           "slug": "ti-accent",
-          "color": "#007afc",
+          "color": "#FF6602",
           "name": "Accent"
         },
         {
@@ -37,12 +37,12 @@
         },
         {
           "slug": "ti-bg-alt",
-          "color": "#161A1D",
+          "color": "#F6F6F6",
           "name": "Background Alt"
         },
         {
           "slug": "ti-fg-alt",
-          "color": "#FFFFFA",
+          "color": "#EEEFE9",
           "name": "Foreground Alt"
         }
       ]

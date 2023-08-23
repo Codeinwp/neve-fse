@@ -17,7 +17,7 @@
       "palette": [
         {
           "slug": "ti-bg",
-          "color": "#0e1012",
+          "color": "#1A261B",
           "name": "Background"
         },
         {
@@ -27,18 +27,18 @@
         },
         {
           "slug": "ti-accent",
-          "color": "#007afc",
+          "color": "#497B4E",
           "name": "Accent"
         },
         {
-          "slug": "ti-bg-alt",
-          "color": "#161A1D",
-          "name": "Background Alt"
+          "slug": "ti-bg-inv",
+          "color": "#080C09",
+          "name": "Background Dark"
         },
         {
-          "slug": "ti-bg-inv",
-          "color": "#000000",
-          "name": "Background Dark"
+          "slug": "ti-bg-alt",
+          "color": "#394E3C",
+          "name": "Background Alt"
         },
         {
           "slug": "ti-fg-alt",
