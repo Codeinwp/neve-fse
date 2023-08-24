@@ -22,8 +22,8 @@ return array(
 	'categories' => array( 'neve-fse' ),
 	'keywords'   => array( 'Columns', 'portfolio', 'cover' ),
 	'content'    => '
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"64px","bottom":"64px"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"ti-fg-alt","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-ti-fg-alt-background-color has-background" style="margin-top:0;margin-bottom:0;padding-top:64px;padding-bottom:64px">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"64px","bottom":"64px"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"ti-bg","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-ti-bg-background-color has-background" style="margin-top:0;margin-bottom:0;padding-top:64px;padding-bottom:64px">
     <!-- wp:heading {"textAlign":"left","align":"wide"} -->
     <h2 class="wp-block-heading alignwide has-text-align-left">Featured Work</h2>
     <!-- /wp:heading -->
