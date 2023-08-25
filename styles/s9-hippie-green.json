@@ -52,7 +52,7 @@
     "elements": {
       "heading": {
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--albert-sans)"
+          "fontFamily": "var(--wp--preset--font-family--playfair-display)"
         }
       },
       "h1": {
@@ -87,23 +87,23 @@
       },
       "button": {
 				"border": {
-					"radius": "50px"
+					"radius": "0px"
 				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--normal)"
 				},
         "spacing": {
 					"padding": {
-						"bottom": "10px",
-						"left": "20px",
-						"right": "20px",
-						"top": "10px"
+						"bottom": "15px",
+						"left": "30px",
+						"right": "30px",
+						"top": "15px"
 					}
 				}
 			}
     },
     "typography": {
-      "fontFamily": "var(--wp--preset--font-family--albert-sans)"
+      "fontFamily": "var(--wp--preset--font-family--open-sans)"
     }
   }
 }

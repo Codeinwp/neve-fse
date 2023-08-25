@@ -57,32 +57,32 @@
       },
       "h1": {
         "typography": {
-          "fontWeight": "600"
+          "fontWeight": "700"
         }
       },
       "h2": {
         "typography": {
-          "fontWeight": "600"
+          "fontWeight": "700"
         }
       },
       "h3": {
         "typography": {
-          "fontWeight": "600"
+          "fontWeight": "700"
         }
       },
       "h4": {
         "typography": {
-          "fontWeight": "600"
+          "fontWeight": "700"
         }
       },
       "h5": {
         "typography": {
-          "fontWeight": "600"
+          "fontWeight": "700"
         }
       },
       "h6": {
         "typography": {
-          "fontWeight": "600"
+          "fontWeight": "700"
         }
       },
       "button": {
@@ -94,10 +94,10 @@
 				},
         "spacing": {
 					"padding": {
-						"bottom": "10px",
-						"left": "20px",
-						"right": "20px",
-						"top": "10px"
+						"bottom": "16px",
+						"left": "32px",
+						"right": "32px",
+						"top": "16px"
 					}
 				}
 			}

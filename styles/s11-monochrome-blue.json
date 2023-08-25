@@ -52,7 +52,7 @@
     "elements": {
       "button": {
 				"border": {
-					"radius": "0"
+					"radius": "50"
 				},
 				"color": {
 					"background": "var(--wp--preset--color--ti-accent)"
@@ -74,7 +74,7 @@
 			},
       "heading": {
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--inter)"
+          "fontFamily": "var(--wp--preset--font-family--source-sans-pro)"
         }
       },
       "h1": {
