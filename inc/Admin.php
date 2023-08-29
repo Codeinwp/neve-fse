@@ -17,8 +17,8 @@ class Admin {
 	 * Admin constructor.
 	 */
 	public function __construct() {
-		$this->setup_otter_notice();
 		$this->add_install_time();
+		add_action( 'admin_init', array( $this, 'add_admin_notices' ) );
 	}
 
 	/**
@@ -35,17 +35,36 @@ class Admin {
 		}
 	}
 
-
 	/**
-	 * Setup the Otter Blocks notice.
+	 * Add admin notices from the theme.
 	 *
 	 * @return void
 	 */
-	public function setup_otter_notice() {
-		add_action( 'admin_notices', array( $this, 'render_welcome_notice' ), 0 );
-		add_action( 'admin_notices', array( $this, 'render_survey_notice' ) );
-		add_action( 'wp_ajax_neve_fse_dismiss_welcome_notice', array( $this, 'remove_welcome_notice' ) );
-		add_action( 'wp_ajax_neve_fse_dismiss_survey_notice', array( $this, 'remove_survey_notice' ) );
+	public function add_admin_notices() {
+		add_filter(
+			'themeisle_sdk_registered_notifications',
+			function( $all_notifications ) {
+				/**
+				 * Uncomment the following lines to add the survey back.
+				 */
+				// phpcs:ignore
+				// $all_notifications[] = array(
+				// 'type'    => 'info',
+				// 'id'      => Constants::CACHE_KEYS['dismissed-survey-notice'],
+				// 'message' => $this->render_survey_notice(),
+				// );
+
+				if ( $this->should_show_welcome_notice() ) {
+					$all_notifications[] = array(
+						'type'    => 'info',
+						'id'      => Constants::CACHE_KEYS['dismissed-welcome-notice'],
+						'message' => $this->render_welcome_notice(),
+					);
+				}
+
+				return $all_notifications;
+			}
+		);
 	}
 
 	/**
@@ -60,6 +79,7 @@ class Admin {
 			return false;
 		}
 
+		require_once ABSPATH . 'wp-admin/includes/screen.php';
 		$screen = get_current_screen();
 
 		// Only show in dashboard/themes.
@@ -99,11 +119,11 @@ class Admin {
 	/**
 	 * Display the survey notice.
 	 *
-	 * @return void
+	 * @return string
 	 */
 	public function render_survey_notice() {
 		if ( ! $this->should_show_survey_notice() ) {
-			return;
+			return '';
 		}
 
 		Assets_Manager::enqueue_style( Assets_Manager::ASSETS_SLUGS['welcome-notice'], 'welcome-notice' );
@@ -121,7 +141,8 @@ class Admin {
 			'surveyFSENoticeData'
 		);
 
-		$survey_notice  = '<div class="notice notice-info is-dismissible neve-fse-survey-notice">';
+
+		$survey_notice  = '<div class="neve-fse-survey-notice">';
 		$survey_notice .= '<div class="notice-content">';
 		$survey_notice .= '<img class="neve-fse-logo" src="' . esc_url( Assets_Manager::get_image_url( 'neve-fse-logo.svg' ) ) . '" alt="' . esc_attr__( 'Neve FSE Logo', 'neve-fse' ) . '"/>';
 		$survey_notice .= '<div class="notice-copy">';
@@ -141,21 +162,17 @@ class Admin {
 		$survey_notice .= '</div>'; // actions.
 		$survey_notice .= '</div>'; // notice-copy.
 		$survey_notice .= '</div>'; // notice-content.
-		$survey_notice .= '</div>'; // notice.
+		$survey_notice .= '</div>'; // content.
 
-		echo wp_kses_post( $survey_notice );
+		return wp_kses_post( $survey_notice );
 	}
 
 	/**
 	 * Render the welcome notice.
 	 *
-	 * @return void
+	 * @return string
 	 */
 	public function render_welcome_notice() {
-		if ( ! $this->should_show_welcome_notice() ) {
-			return;
-		}
-
 		$otter_status = $this->get_otter_status();
 
 		Assets_Manager::enqueue_style( Assets_Manager::ASSETS_SLUGS['welcome-notice'], 'welcome-notice' );
@@ -186,8 +203,7 @@ class Admin {
 			)
 		);
 
-		$notice_html  = '<div class="notice notice-info neve-fse-welcome-notice">';
-		$notice_html .= '<button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button>';
+		$notice_html  = '<div class="neve-fse-welcome-notice">';
 		$notice_html .= '<div class="notice-content">';
 
 		$notice_html .= '<img class="otter-preview" src="' . esc_url( Assets_Manager::get_image_url( 'welcome-notice.png' ) ) . '" alt="' . esc_attr__( 'Otter Blocks preview', 'neve-fse' ) . '"/>';
@@ -227,40 +243,8 @@ class Admin {
 		$notice_html .= '</div>';
 		$notice_html .= '</div>';
 
-		echo wp_kses_post( $notice_html );
+		return wp_kses_post( $notice_html );
 
-	}
-
-	/**
-	 * Dismiss the welcome notice.
-	 *
-	 * @return void
-	 */
-	public function remove_welcome_notice() {
-		if ( ! isset( $_POST['nonce'] ) ) {
-			return;
-		}
-		if ( ! wp_verify_nonce( sanitize_text_field( $_POST['nonce'] ), 'neve-fse-dismiss-welcome-notice' ) ) {
-			return;
-		}
-		update_option( Constants::CACHE_KEYS['dismissed-welcome-notice'], 'yes' );
-		wp_die();
-	}
-
-	/**
-	 * Dismiss the survey notice.
-	 *
-	 * @return void
-	 */
-	public function remove_survey_notice() {
-		if ( ! isset( $_POST['nonce'] ) ) {
-			return;
-		}
-		if ( ! wp_verify_nonce( sanitize_text_field( $_POST['nonce'] ), 'neve-fse-dismiss-survey-notice' ) ) {
-			return;
-		}
-		update_option( Constants::CACHE_KEYS['dismissed-survey-notice'], 'yes' );
-		wp_die();
 	}
 
 	/**
