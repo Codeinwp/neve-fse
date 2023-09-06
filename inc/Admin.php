@@ -26,8 +26,8 @@ class Admin {
 	 * Admin constructor.
 	 */
 	public function __construct() {
+		$this->setup_otter_notice();
 		$this->add_install_time();
-		add_action( 'admin_init', array( $this, 'handle_notices' ) );
 	}
 
 	/**
@@ -46,23 +46,14 @@ class Admin {
 
 
 	/**
-	 * Handle admin notices in Neve FSE.
+	 * Setup the Otter Blocks notice.
 	 *
 	 * @return void
 	 */
-	public function handle_notices() {
+	public function setup_otter_notice() {
 		add_action( 'admin_notices', array( $this, 'render_welcome_notice' ), 0 );
-		add_action( 'wp_ajax_neve_fse_dismiss_welcome_notice', array( $this, 'remove_welcome_notice' ) );
-
-		/**
-		 * Do not show any other message on Themes page if Neve FSE promo is enabled.
-		 */
-		global $pagenow;
-		$current_promotion = apply_filters( 'themeisle_sdk_current_promotion', '' );
-		if ( 'neve-fse-themes-popular' === $current_promotion && 'themes.php' === $pagenow ) {
-			return;
-		}
 		add_action( 'admin_notices', array( $this, 'render_survey_notice' ) );
+		add_action( 'wp_ajax_neve_fse_dismiss_welcome_notice', array( $this, 'remove_welcome_notice' ) );
 		add_action( 'wp_ajax_neve_fse_dismiss_survey_notice', array( $this, 'remove_survey_notice' ) );
 	}
 
