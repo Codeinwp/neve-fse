@@ -20,7 +20,7 @@ class Admin {
 	 *
 	 * @var bool
 	 */
-	private $suspend_survey = false;
+	private $suspend_survey = true;
 
 	/**
 	 * Admin constructor.
