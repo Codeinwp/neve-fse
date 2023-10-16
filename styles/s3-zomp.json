@@ -21,6 +21,11 @@
           "name": "Accent"
         },
         {
+          "slug": "ti-accent-secondary",
+          "color": "var(--nv-secondary-accent, #3A8A80)",
+          "name": "Accent Secondary"
+        },
+        {
           "slug": "ti-bg-inv",
           "color": "#1E2827",
           "name": "Background Dark"
