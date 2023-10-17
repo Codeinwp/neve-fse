@@ -22,7 +22,7 @@
         },
         {
           "slug": "ti-accent-secondary",
-          "color": "var(--nv-secondary-accent, #AD8A54)",
+          "color": "#AD8A54",
           "name": "Accent Secondary"
         },
         {
