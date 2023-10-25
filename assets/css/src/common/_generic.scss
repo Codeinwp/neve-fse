@@ -42,18 +42,6 @@ footer {
  * https://github.com/WordPress/gutenberg/issues/35884
  */
 
-.wp-site-blocks,
-body > .is-root-container,
-.edit-post-visual-editor__post-title-wrapper,
-.wp-block-group.alignfull,
-.wp-block-group.has-background,
-.wp-block-cover.alignfull,
-.is-root-container .wp-block[data-align="full"] > .wp-block-group,
-.is-root-container .wp-block[data-align="full"] > .wp-block-cover {
-	padding-left: var(--wp--custom--spacing--outer);
-	padding-right: var(--wp--custom--spacing--outer);
-}
-
 .wp-site-blocks .alignfull,
 .wp-site-blocks > .wp-block-group.has-background,
 .wp-site-blocks > .wp-block-cover,
