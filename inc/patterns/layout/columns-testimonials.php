@@ -23,8 +23,8 @@ return array(
 	'categories' => array( 'neve-fse' ),
 	'keywords'   => array( 'Columns', 'testimonial', 'client', 'review' ),
 	'content'    => '
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"64px","bottom":"64px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"40px"}},"layout":{"inherit":true,"type":"constrained"}} -->
-<div class="wp-block-group alignfull" style="margin-top:0px;margin-bottom:0px;padding-top:64px;padding-bottom:64px">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"64px","bottom":"64px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"40px"}},"backgroundColor":"ti-accent","textColor":"ti-fg-alt","layout":{"inherit":true,"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-ti-fg-alt-color has-ti-accent-background-color has-text-color has-background" style="margin-top:0px;margin-bottom:0px;padding-top:64px;padding-bottom:64px">
     <!-- wp:group {"align":"wide"} -->
     <div class="wp-block-group alignwide">
         <!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"24px","left":"24px"}}}} -->
@@ -44,7 +44,7 @@ return array(
                     <!-- /wp:paragraph -->
 
                     <!-- wp:paragraph {"align":"left","fontSize":"small"} -->
-                    <p class="has-text-align-left has-small-font-size"><strong>JOHN DOE</strong></p>
+                    <p class="has-text-align-left has-small-font-size"><strong>JANE DOE</strong></p>
                     <!-- /wp:paragraph -->
                 </div>
                 <!-- /wp:group -->
@@ -66,7 +66,7 @@ return array(
                     <!-- /wp:paragraph -->
 
                     <!-- wp:paragraph {"align":"left","fontSize":"small"} -->
-                    <p class="has-text-align-left has-small-font-size"><strong>JANE DOE</strong></p>
+                    <p class="has-text-align-left has-small-font-size"><strong>JOHN DOE</strong></p>
                     <!-- /wp:paragraph -->
                 </div>
                 <!-- /wp:group -->
@@ -88,7 +88,7 @@ return array(
                     <!-- /wp:paragraph -->
 
                     <!-- wp:paragraph {"align":"left","fontSize":"small"} -->
-                    <p class="has-text-align-left has-small-font-size"><strong>GEORGE DOE</strong></p>
+                    <p class="has-text-align-left has-small-font-size"><strong>MARIA DOE</strong></p>
                     <!-- /wp:paragraph -->
                 </div>
                 <!-- /wp:group -->
