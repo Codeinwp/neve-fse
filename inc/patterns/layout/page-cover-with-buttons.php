@@ -21,8 +21,8 @@ return array(
 	'categories' => array( 'neve-fse' ),
 	'keywords'   => array( 'Hero', 'Page Hero', 'Cover' ),
 	'content'    => '
-<!-- wp:cover {"url":"' . esc_url( $cover_image ) . '","dimRatio":0,"overlayColor":"ti-bg-inv","minHeight":60,"minHeightUnit":"vh","contentPosition":"center center","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"24px","right":"24px","bottom":"24px","left":"24px"}}}} -->
-<div class="wp-block-cover alignfull is-light" style="padding-top:24px;padding-right:24px;padding-bottom:24px;padding-left:24px;min-height:60vh">
+<!-- wp:cover {"url":"' . esc_url( $cover_image ) . '","dimRatio":0,"overlayColor":"ti-bg-inv","minHeight":600,"minHeightUnit":"px","contentPosition":"center center","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"24px","right":"24px","bottom":"24px","left":"24px"}}}} -->
+<div class="wp-block-cover alignfull is-light" style="padding-top:24px;padding-right:24px;padding-bottom:24px;padding-left:24px;min-height:600px">
     <span aria-hidden="true" class="wp-block-cover__background has-ti-bg-inv-background-color has-background-dim-0 has-background-dim"></span>
     <img class="wp-block-cover__image-background" alt="" src="' . esc_url( $cover_image ) . '" data-object-fit="cover"/>
     <div class="wp-block-cover__inner-container">
