@@ -13,6 +13,15 @@ namespace NeveFSE;
  * Admin class.
  */
 class Admin {
+
+	/**
+	 * Property to suspend the survey.
+	 * Change it to true to enable it.
+	 *
+	 * @var bool
+	 */
+	private $suspend_survey = true;
+
 	/**
 	 * Admin constructor.
 	 */
@@ -54,6 +63,10 @@ class Admin {
 	 * @return bool
 	 */
 	public function should_show_survey_notice() {
+
+		if ( $this->suspend_survey ) {
+			return false;
+		}
 
 		// Notice was dismissed.
 		if ( get_option( Constants::CACHE_KEYS['dismissed-survey-notice'], 'no' ) === 'yes' ) {

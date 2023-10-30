@@ -21,6 +21,11 @@
           "name": "Accent"
         },
         {
+          "slug": "ti-accent-secondary",
+          "color": "#AD8A54",
+          "name": "Accent Secondary"
+        },
+        {
           "slug": "ti-bg-alt",
           "color": "#1F1F1F",
           "name": "Background Alt"
