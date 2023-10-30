@@ -16,6 +16,22 @@ Neve FSE is distributed under the terms of the GNU GPLv2 or later
 
 == Changelog ==
 
+##### [Version 1.0.6](https://github.com/Codeinwp/neve-fse/compare/v1.0.5...v1.0.6) (2023-10-30)
+
+### Improvements
+- **Dashboard Survey**: Eliminated the feedback survey embedded within the dashboard.
+- **Template Refinements**: Incorporated header and footer elements into the 404 template.
+- **Template Refinements**: Applied the accent color as the background color to the penultimate section on the homepage.
+- **Template Refinements**: Integrated the site background color into the Featured Work section.
+- **Style Enhancements**: Introduced the Secondary Accent color in the main theme.json file and specified corresponding colors for each palette individually.
+
+### Bug Fixes
+- **Editor Padding**: Rectified the padding issue surrounding the page inside the editor.
+- **Editor Styles View**: Resolved the problem of sections expanding in height when previewing in Styles view on the homepage.
+
+
+
+
 ##### [Version 1.0.5](https://github.com/Codeinwp/neve-fse/compare/v1.0.4...v1.0.5) (2023-08-03)
 
 - [Feat] Change the padding for Primary and Secondary buttons on mobile
