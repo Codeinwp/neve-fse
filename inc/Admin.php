@@ -395,7 +395,7 @@ class Admin {
 			return 30;
 		} elseif ( $normalized_number > 30 && $normalized_number < 90 ) {
 			return 90;
-		} elseif ( $normalized_number < 90 ) {
+		} elseif ( $normalized_number > 90 ) {
 			return 91;
 		}
 	}
