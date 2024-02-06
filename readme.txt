@@ -2,7 +2,7 @@
 Contributors: themeisle
 Tags: block-patterns
 Requires at least: 5.5
-Tested up to: 6.3
+Tested up to: 6.4
 Stable tag: trunk
 Requires PHP: 7.0
 License: GPLv2 or later
