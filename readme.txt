@@ -16,6 +16,21 @@ Neve FSE is distributed under the terms of the GNU GPLv2 or later
 
 == Changelog ==
 
+##### [Version 1.0.7](https://github.com/Codeinwp/neve-fse/compare/v1.0.6...v1.0.7) (2024-02-14)
+
+### Improvements
+
+- **WordPress compatibility check**: Tested with the latest WordPress version for compatibility.
+
+### Bug Fixes
+
+- **Pagination on Archive**: Fixed the issue with pagination not working properly on Archive templates.
+
+- **No Horizontal Margins on Mobile**: - Addressed the styling issue when margins on smaller screens were being removed.
+
+
+
+
 ##### [Version 1.0.6](https://github.com/Codeinwp/neve-fse/compare/v1.0.5...v1.0.6) (2023-10-30)
 
 ### Improvements
