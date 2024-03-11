@@ -1,13 +1,13 @@
 {
   "$schema": "https://schemas.wp.org/trunk/theme.json",
-  "title": "Majorelle Blue",
+  "title": "Blaze Orange",
   "version": 2,
   "settings": {
     "color": {
       "duotone": [
 				{
 					"colors": [
-						"#5E33D9",
+						"#FF6602",
 						"#FFFFFF"
 					],
 					"slug": "default-neve-overlay",
@@ -22,32 +22,27 @@
         },
         {
           "slug": "ti-fg",
-          "color": "#1F2023",
+          "color": "#202020",
           "name": "Foreground"
         },
         {
           "slug": "ti-accent",
-          "color": "#5E33D9",
+          "color": "#FF6602",
           "name": "Accent"
         },
         {
-          "slug": "ti-accent-secondary",
-          "color": "#4F25C6",
-          "name": "Accent Secondary"
-        },
-        {
           "slug": "ti-bg-inv",
-          "color": "#261E3C",
+          "color": "#000000",
           "name": "Background Dark"
         },
         {
           "slug": "ti-bg-alt",
-          "color": "#EEEBF5",
+          "color": "#F6F6F6",
           "name": "Background Alt"
         },
         {
           "slug": "ti-fg-alt",
-          "color": "#FFFFFA",
+          "color": "#EEEFE9",
           "name": "Foreground Alt"
         }
       ]
@@ -55,29 +50,51 @@
   },
   "styles": {
     "elements": {
+      "button": {
+				"border": {
+					"radius": "0"
+				},
+				"color": {
+					"background": "var(--wp--preset--color--ti-accent)"
+				},
+				"spacing": {
+					"padding": {
+						"top": "15px",
+						"right": "30px",
+						"bottom": "15px",
+						"left": "30px"
+					}
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"fontWeight": "600",
+					"textTransform": "uppercase",
+					"letterSpacing": "0.01em"
+				}
+			},
       "heading": {
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--albert-sans)"
+          "fontFamily": "var(--wp--preset--font-family--open-sans)"
         }
       },
       "h1": {
         "typography": {
-          "fontWeight": "600"
+          "fontWeight": "900"
         }
       },
       "h2": {
         "typography": {
-          "fontWeight": "600"
+          "fontWeight": "900"
         }
       },
       "h3": {
         "typography": {
-          "fontWeight": "600"
+          "fontWeight": "900"
         }
       },
       "h4": {
         "typography": {
-          "fontWeight": "600"
+          "fontWeight": "900"
         }
       },
       "h5": {
@@ -92,7 +109,7 @@
       }
     },
     "typography": {
-      "fontFamily": "var(--wp--preset--font-family--albert-sans)"
+      "fontFamily": "var(--wp--preset--font-family--montserrat)"
     }
   }
 }

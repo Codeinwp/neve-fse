@@ -4,6 +4,16 @@
   "version": 2,
   "settings": {
     "color": {
+      "duotone": [
+				{
+					"colors": [
+						"#F5AB1A",
+						"#FFFFFF"
+					],
+					"slug": "default-neve-overlay",
+					"name": "Default Neve overlay"
+				}
+			],
       "palette": [
         {
           "slug": "ti-bg",
@@ -45,6 +55,11 @@
   },
   "styles": {
     "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--inter)"
+        }
+      },
       "h1": {
         "typography": {
           "fontWeight": "600"
@@ -74,11 +89,6 @@
         "typography": {
           "fontWeight": "600"
         }
-      }
-    },
-    "heading": {
-      "typography": {
-        "fontFamily": "var(--wp--preset--font-family--inter)"
       }
     },
     "typography": {

@@ -1,13 +1,13 @@
 {
   "$schema": "https://schemas.wp.org/trunk/theme.json",
-  "title": "Majorelle Blue",
+  "title": "Tiber",
   "version": 2,
   "settings": {
     "color": {
       "duotone": [
 				{
 					"colors": [
-						"#5E33D9",
+						"#007afc",
 						"#FFFFFF"
 					],
 					"slug": "default-neve-overlay",
@@ -17,33 +17,28 @@
       "palette": [
         {
           "slug": "ti-bg",
-          "color": "#FFFFFF",
+          "color": "#0e1012",
           "name": "Background"
         },
         {
           "slug": "ti-fg",
-          "color": "#1F2023",
+          "color": "#f5f5f7",
           "name": "Foreground"
         },
         {
           "slug": "ti-accent",
-          "color": "#5E33D9",
+          "color": "#007afc",
           "name": "Accent"
         },
         {
-          "slug": "ti-accent-secondary",
-          "color": "#4F25C6",
-          "name": "Accent Secondary"
+          "slug": "ti-bg-alt",
+          "color": "#161A1D",
+          "name": "Background Alt"
         },
         {
           "slug": "ti-bg-inv",
-          "color": "#261E3C",
+          "color": "#000000",
           "name": "Background Dark"
-        },
-        {
-          "slug": "ti-bg-alt",
-          "color": "#EEEBF5",
-          "name": "Background Alt"
         },
         {
           "slug": "ti-fg-alt",
@@ -62,34 +57,50 @@
       },
       "h1": {
         "typography": {
-          "fontWeight": "600"
+          "fontWeight": "700"
         }
       },
       "h2": {
         "typography": {
-          "fontWeight": "600"
+          "fontWeight": "700"
         }
       },
       "h3": {
         "typography": {
-          "fontWeight": "600"
+          "fontWeight": "700"
         }
       },
       "h4": {
         "typography": {
-          "fontWeight": "600"
+          "fontWeight": "700"
         }
       },
       "h5": {
         "typography": {
-          "fontWeight": "600"
+          "fontWeight": "700"
         }
       },
       "h6": {
         "typography": {
-          "fontWeight": "600"
+          "fontWeight": "700"
         }
-      }
+      },
+      "button": {
+				"border": {
+					"radius": "50px"
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--normal)"
+				},
+        "spacing": {
+					"padding": {
+						"bottom": "16px",
+						"left": "32px",
+						"right": "32px",
+						"top": "16px"
+					}
+				}
+			}
     },
     "typography": {
       "fontFamily": "var(--wp--preset--font-family--albert-sans)"

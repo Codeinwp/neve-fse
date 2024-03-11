@@ -1,13 +1,13 @@
 {
   "$schema": "https://schemas.wp.org/trunk/theme.json",
-  "title": "Majorelle Blue",
+  "title": "Mono Blue",
   "version": 2,
   "settings": {
     "color": {
       "duotone": [
 				{
 					"colors": [
-						"#5E33D9",
+						"#2242A0",
 						"#FFFFFF"
 					],
 					"slug": "default-neve-overlay",
@@ -17,32 +17,27 @@
       "palette": [
         {
           "slug": "ti-bg",
-          "color": "#FFFFFF",
+          "color": "#E2E8F9",
           "name": "Background"
         },
         {
           "slug": "ti-fg",
-          "color": "#1F2023",
+          "color": "#313132",
           "name": "Foreground"
         },
         {
           "slug": "ti-accent",
-          "color": "#5E33D9",
+          "color": "#2242A0",
           "name": "Accent"
         },
         {
-          "slug": "ti-accent-secondary",
-          "color": "#4F25C6",
-          "name": "Accent Secondary"
-        },
-        {
           "slug": "ti-bg-inv",
-          "color": "#261E3C",
+          "color": "#182F71",
           "name": "Background Dark"
         },
         {
           "slug": "ti-bg-alt",
-          "color": "#EEEBF5",
+          "color": "#EEF2FC",
           "name": "Background Alt"
         },
         {
@@ -55,9 +50,31 @@
   },
   "styles": {
     "elements": {
+      "button": {
+				"border": {
+					"radius": "50"
+				},
+				"color": {
+					"background": "var(--wp--preset--color--ti-accent)"
+				},
+				"spacing": {
+					"padding": {
+						"top": "15px",
+						"right": "30px",
+						"bottom": "15px",
+						"left": "30px"
+					}
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"fontWeight": "600",
+					"textTransform": "uppercase",
+					"letterSpacing": "0.01em"
+				}
+			},
       "heading": {
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--albert-sans)"
+          "fontFamily": "var(--wp--preset--font-family--source-sans-pro)"
         }
       },
       "h1": {
@@ -92,7 +109,7 @@
       }
     },
     "typography": {
-      "fontFamily": "var(--wp--preset--font-family--albert-sans)"
+      "fontFamily": "var(--wp--preset--font-family--inter)"
     }
   }
 }
