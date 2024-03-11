@@ -16,6 +16,18 @@ Neve FSE is distributed under the terms of the GNU GPLv2 or later
 
 == Changelog ==
 
+##### [Version 1.0.8](https://github.com/Codeinwp/neve-fse/compare/v1.0.7...v1.0.8) (2024-03-11)
+
+### Bug Fixes
+
+- **Fix NPS Survey**: Fixed survey appearing instantly when theme installed programmatically.
+### Bug Fixes
+
+- **Fix NPS Survey**: Fixed survey appearing instantly when theme installed programmatically.
+
+
+
+
 ##### [Version 1.0.7](https://github.com/Codeinwp/neve-fse/compare/v1.0.6...v1.0.7) (2024-02-14)
 
 ### Improvements
