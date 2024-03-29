@@ -4,6 +4,16 @@
   "version": 2,
   "settings": {
     "color": {
+      "duotone": [
+				{
+					"colors": [
+						"#DF6018",
+						"#FFFFFF"
+					],
+					"slug": "default-neve-overlay",
+					"name": "Default Neve overlay"
+				}
+			],
       "palette": [
         {
           "slug": "ti-bg",
