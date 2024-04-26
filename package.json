@@ -29,6 +29,7 @@
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@wordpress/eslint-plugin": "^12.8.0",
+    "@wordpress/icons": "^9.47.0",
     "@wordpress/scripts": "^23.6.0",
     "@wordpress/stylelint-config": "^20.0.2",
     "conventional-changelog-simple-preset": "^1.0.20",

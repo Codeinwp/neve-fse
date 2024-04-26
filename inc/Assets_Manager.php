@@ -16,10 +16,11 @@ namespace NeveFSE;
  */
 class Assets_Manager {
 	const ASSETS_SLUGS = array(
-		'frontend-css'   => 'neve-fse-style',
-		'editor-css'     => 'neve-fse-editor',
-		'welcome-notice' => 'neve-fse-welcome-notice',
-		'general-notice' => 'neve-fse-general-notice',
+		'frontend-css'       => 'neve-fse-style',
+		'editor-css'         => 'neve-fse-editor',
+		'welcome-notice'     => 'neve-fse-welcome-notice',
+		'general-notice'     => 'neve-fse-general-notice',
+		'design-pack-notice' => 'neve-fse-design-pack-notice',
 	);
 
 	const AVAILABLE_THEME_FONTS = array(
