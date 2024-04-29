@@ -56,6 +56,82 @@ class Admin {
 		add_action( 'wp_ajax_neve_fse_dismiss_welcome_notice', array( $this, 'remove_welcome_notice' ) );
 		add_action( 'wp_ajax_neve_fse_dismiss_survey_notice', array( $this, 'remove_survey_notice' ) );
 		add_action( 'admin_print_scripts', array( $this, 'add_nps_form' ) );
+
+		add_action( 'enqueue_block_editor_assets', array( $this, 'add_fse_design_pack_notice' ) );
+		add_action( 'wp_ajax_neve_fse_dismiss_design_pack_notice', array( $this, 'remove_design_pack_notice' ) );
+	}
+
+	/**
+	 * Render design pack notice.
+	 *
+	 * @return void
+	 */
+	public function add_fse_design_pack_notice() {
+		if ( ! $this->should_render_design_pack_notice() ) {
+			return;
+		}
+
+		Assets_Manager::enqueue_style( Assets_Manager::ASSETS_SLUGS['design-pack-notice'], 'design-pack-notice' );
+		Assets_Manager::enqueue_script(
+			Assets_Manager::ASSETS_SLUGS['design-pack-notice'],
+			'design-pack-notice',
+			true,
+			array(),
+			array(
+				'nonce'      => wp_create_nonce( 'neve-fse-dismiss-design-pack-notice' ),
+				'ajaxUrl'    => esc_url( admin_url( 'admin-ajax.php' ) ),
+				'ajaxAction' => 'neve_fse_dismiss_design_pack_notice',
+				'buttonLink' => tsdk_utmify( 'https://themeisle.com/plugins/fse-design-pack', 'editor', 'neve-fse' ),
+				'strings'    => array(
+					'dismiss'    => __( 'Dismiss', 'neve-fse' ),
+					'recommends' => __( 'Neve FSE recommends', 'neve-fse' ),
+					'learnMore'  => __( 'Learn More', 'neve-fse' ),
+					'noticeHtml' => sprintf(
+					/* translators: %s: FSE Design Pack: */
+						__( '%s Access a collection of 40+ layout patterns ready to import to your website', 'neve-fse' ),
+						'<strong>FSE Design Pack:</strong>'
+					),
+				),
+			),
+			'designPackNoticeData'
+		);
+
+		echo '<div id="neve-fse-design-pack-notice"></div>';
+	}
+
+	/**
+	 * Should we show the design pack notice?
+	 *
+	 * @return bool
+	 */
+	private function should_render_design_pack_notice() {
+		// Already using.
+		if ( is_plugin_active( 'fse-design-pack/fse-design-pack.php' ) ) {
+			return false;
+		}
+
+		// Notice was dismissed.
+		if ( get_option( Constants::CACHE_KEYS['dismissed-fse-design-pack-notice'], 'no' ) === 'yes' ) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * Dismiss the design pack notice.
+	 *
+	 * @return void
+	 */
+	public function remove_design_pack_notice() {
+		if ( ! isset( $_POST['nonce'] ) ) {
+			return;
+		}
+		if ( ! wp_verify_nonce( sanitize_text_field( $_POST['nonce'] ), 'neve-fse-dismiss-design-pack-notice' ) ) {
+			return;
+		}
+		update_option( Constants::CACHE_KEYS['dismissed-fse-design-pack-notice'], 'yes' );
+		wp_die();
 	}
 
 	/**
