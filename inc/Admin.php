@@ -88,7 +88,7 @@ class Admin {
 					'learnMore'  => __( 'Learn More', 'neve-fse' ),
 					'noticeHtml' => sprintf(
 					/* translators: %s: FSE Design Pack: */
-						__( '%s Access a collection of 50+ layout patterns ready to import to your website', 'neve-fse' ),
+						__( '%s Access a collection of 40+ layout patterns ready to import to your website', 'neve-fse' ),
 						'<strong>FSE Design Pack:</strong>'
 					),
 				),
