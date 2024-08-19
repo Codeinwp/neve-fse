@@ -488,7 +488,7 @@ class Admin {
 
 		wp_safe_redirect( $onboarding );
 		exit;
-  }
+	}
 
 	/**
 	 * Update Otter reference key.
