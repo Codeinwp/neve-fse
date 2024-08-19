@@ -278,6 +278,14 @@ class Admin {
 						admin_url( 'plugins.php' )
 					)
 				),
+				'onboardingUrl' => esc_url(
+					add_query_arg(
+						array(
+							'onboarding' => 'true',
+						),
+						admin_url( 'site-editor.php' )
+					) 
+				),
 				'activating'    => __( 'Activating', 'neve-fse' ) . '&hellip;',
 				'installing'    => __( 'Installing', 'neve-fse' ) . '&hellip;',
 				'done'          => __( 'Done', 'neve-fse' ),
@@ -428,6 +436,10 @@ class Admin {
 	 */
 	private function get_otter_status(): string {
 		$status = 'not-installed';
+
+		if ( is_plugin_active( 'otter-blocks/otter-blocks.php' ) ) {
+			return 'active';
+		}
 
 		if ( file_exists( ABSPATH . 'wp-content/plugins/otter-blocks/otter-blocks.php' ) ) {
 			return 'installed';

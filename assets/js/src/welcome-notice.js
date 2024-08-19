@@ -8,6 +8,7 @@ function handleWelcomeNotice( $ ) {
 		installing,
 		done,
 		activationUrl,
+		onboardingUrl,
 		ajaxUrl,
 		nonce,
 		otterRefNonce,
@@ -41,11 +42,17 @@ function handleWelcomeNotice( $ ) {
 		installSpinner.addClass( 'dashicons-yes' );
 		installText.text( done );
 		setTimeout( hideAndRemoveNotice, 1500 );
+		window.location.href = onboardingUrl;
 	};
 
 	$( installBtn ).on( 'click', async () => {
 		installSpinner.removeClass( 'hidden' );
 		installBtn.attr( 'disabled', true );
+
+		if ( otterStatus === 'active' ) {
+			window.location.href = onboardingUrl;
+			return;
+		}
 
 		if ( otterStatus === 'installed' ) {
 			await activateOtter();
