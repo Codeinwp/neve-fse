@@ -443,11 +443,7 @@ class Admin {
 	 * @return void
 	 */
 	public function set_otter_ref() {
-		if ( empty( $_POST['nonce'] ) ) {
-			return;
-		}
-
-		if ( ! wp_verify_nonce( sanitize_text_field( $_POST['nonce'] ), 'neve-fse-set-otter-ref' ) ) {
+		if ( empty( $_POST['nonce'] ) || ! wp_verify_nonce( sanitize_text_field( $_POST['nonce'] ), 'neve-fse-set-otter-ref' ) ) {
 			return;
 		}
 
