@@ -96,8 +96,6 @@ class Admin {
 			),
 			'designPackNoticeData'
 		);
-
-		echo '<div id="neve-fse-design-pack-notice"></div>';
 	}
 
 	/**
