@@ -23,6 +23,13 @@ class Admin {
 	private $suspend_survey = true;
 
 	/**
+	 * Otter reference key.
+	 *
+	 * @var string
+	 */
+	const OTTER_REF = 'otter_reference_key';
+
+	/**
 	 * Admin constructor.
 	 */
 	public function __construct() {
@@ -59,6 +66,7 @@ class Admin {
 
 		add_action( 'enqueue_block_editor_assets', array( $this, 'add_fse_design_pack_notice' ) );
 		add_action( 'wp_ajax_neve_fse_dismiss_design_pack_notice', array( $this, 'remove_design_pack_notice' ) );
+		add_action( 'wp_ajax_neve_fse_set_otter_ref', array( $this, 'set_otter_ref' ) );
 	}
 
 	/**
@@ -78,11 +86,12 @@ class Admin {
 			true,
 			array(),
 			array(
-				'nonce'      => wp_create_nonce( 'neve-fse-dismiss-design-pack-notice' ),
-				'ajaxUrl'    => esc_url( admin_url( 'admin-ajax.php' ) ),
-				'ajaxAction' => 'neve_fse_dismiss_design_pack_notice',
-				'buttonLink' => tsdk_utmify( 'https://themeisle.com/plugins/fse-design-pack', 'editor', 'neve-fse' ),
-				'strings'    => array(
+				'nonce'         => wp_create_nonce( 'neve-fse-dismiss-design-pack-notice' ),
+				'otterRefNonce' => wp_create_nonce( 'neve-fse-set-otter-ref' ),
+				'ajaxUrl'       => esc_url( admin_url( 'admin-ajax.php' ) ),
+				'ajaxAction'    => 'neve_fse_dismiss_design_pack_notice',
+				'buttonLink'    => tsdk_utmify( 'https://themeisle.com/plugins/fse-design-pack', 'editor', 'neve-fse' ),
+				'strings'       => array(
 					'dismiss'    => __( 'Dismiss', 'neve-fse' ),
 					'recommends' => __( 'Neve FSE recommends', 'neve-fse' ),
 					'learnMore'  => __( 'Learn More', 'neve-fse' ),
@@ -426,6 +435,21 @@ class Admin {
 		}
 
 		return $status;
+	}
+
+	/**
+	 * Update Otter reference key.
+	 *
+	 * @return void
+	 */
+	public function set_otter_ref() {
+		if ( empty( $_POST['nonce'] ) || ! wp_verify_nonce( sanitize_text_field( $_POST['nonce'] ), 'neve-fse-set-otter-ref' ) ) {
+			return;
+		}
+
+		update_option( self::OTTER_REF, 'neve-fse' );
+
+		wp_send_json_success();
 	}
 
 	/**
