@@ -59,6 +59,7 @@ class Admin {
 
 		add_action( 'enqueue_block_editor_assets', array( $this, 'add_fse_design_pack_notice' ) );
 		add_action( 'wp_ajax_neve_fse_dismiss_design_pack_notice', array( $this, 'remove_design_pack_notice' ) );
+		add_action( 'activated_plugin', 'after_otter_activation' );
 	}
 
 	/**
@@ -426,6 +427,48 @@ class Admin {
 		}
 
 		return $status;
+	}
+
+	/**
+	 * Run after Otter Blocks activation.
+	 *
+	 * @param string $plugin Plugin name.
+	 *
+	 * @return void
+	 */
+	public function after_otter_activation( $plugin ) {
+		if ( 'otter-blocks/otter-blocks.php' !== $plugin ) {
+			return;
+		}
+
+		if ( ! class_exists( '\ThemeIsle\GutenbergBlocks\Plugins\FSE_Onboarding' ) ) {
+			return;
+		}
+
+		$status = get_option( \ThemeIsle\GutenbergBlocks\Plugins\FSE_Onboarding::OPTION_KEY, array() );
+		$slug   = get_stylesheet();
+
+		if ( ! empty( $status[ $slug ] ) ) {
+			return;
+		}
+
+		// Dismiss after two days from activation.
+		$activated_time = get_option( 'neve_fse_install' );
+
+		if ( ! empty( $activated_time ) && time() - intval( $activated_time ) > ( 2 * DAY_IN_SECONDS ) ) {
+			update_option( Constants::CACHE_KEYS['dismissed-welcome-notice'], 'yes' );
+			return;
+		}
+
+		$onboarding = add_query_arg(
+			array(
+				'onboarding' => 'true',
+			),
+			admin_url( 'site-editor.php' )
+		);
+
+		wp_safe_redirect( $onboarding );
+		exit;
 	}
 
 	/**

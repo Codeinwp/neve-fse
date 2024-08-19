@@ -23,8 +23,8 @@ return array(
 <main class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
 	<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"0px","bottom":"0px"},"margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"default"}} -->
 	<div class="wp-block-group alignfull" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-bottom:0px">
-		<!-- wp:cover {"useFeaturedImage":true,"dimRatio":80,"overlayColor":"ti-bg-inv","minHeight":45,"minHeightUnit":"vh","align":"full","style":{"spacing":{"padding":{"top":"64px","bottom":"64px","right":"24px","left":"24px"}}}} -->
-		<div class="wp-block-cover alignfull" style="padding-top:64px;padding-right:24px;padding-bottom:64px;padding-left:24px;min-height:45vh">
+		<!-- wp:cover {"useFeaturedImage":true,"dimRatio":80,"overlayColor":"ti-bg-inv","align":"full","style":{"spacing":{"padding":{"top":"64px","bottom":"64px","right":"24px","left":"24px"}}}} -->
+		<div class="wp-block-cover alignfull" style="padding-top:64px;padding-right:24px;padding-bottom:64px;padding-left:24px">
 			<span aria-hidden="true" class="wp-block-cover__background has-ti-bg-inv-background-color has-background-dim-80 has-background-dim"></span>
 			<div class="wp-block-cover__inner-container">
 				<!-- wp:group {"textColor":"ti-fg-alt","layout":{"type":"constrained"}} -->
