@@ -19,15 +19,7 @@ Neve FSE is distributed under the terms of the GNU GPLv2 or later
 #### [Version 1.1.0](https://github.com/Codeinwp/neve-fse/compare/v1.0.10...v1.1.0) (2024-08-28)
 
 ### New Features
-- **New Onboarding for Raft Theme**: Experience a new Onboarding process for the Raft theme, integrating the use of Otter Blocks plugin.
-- **New Block Patterns**: Added new block patterns to enrich the customization options.
-- **Fullwidth Template with Header and Footer**: Introduced a new fullwidth template that includes both Header and Footer.
-
-### Bug Fixes
-
-- **Fix Notice Error**: Fixed an issue with the Notice causing an error when visiting the Editor.
-### New Features
-- **New Onboarding for Raft Theme**: Experience a new Onboarding process for the Neve FSE theme, integrating the use of Otter Blocks plugin.
+- **New Onboarding for Neve FSE Theme**: Experience a new Onboarding process for the Neve FSE theme, integrating the use of Otter Blocks plugin.
 - **New Block Patterns**: Added new block patterns to enrich the customization options.
 - **Fullwidth Template with Header and Footer**: Introduced a new fullwidth template that includes both Header and Footer.
 
