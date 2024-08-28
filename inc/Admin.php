@@ -23,6 +23,13 @@ class Admin {
 	private $suspend_survey = true;
 
 	/**
+	 * Otter reference key.
+	 *
+	 * @var string
+	 */
+	const OTTER_REF = 'otter_reference_key';
+
+	/**
 	 * Admin constructor.
 	 */
 	public function __construct() {
@@ -59,6 +66,8 @@ class Admin {
 
 		add_action( 'enqueue_block_editor_assets', array( $this, 'add_fse_design_pack_notice' ) );
 		add_action( 'wp_ajax_neve_fse_dismiss_design_pack_notice', array( $this, 'remove_design_pack_notice' ) );
+		add_action( 'activated_plugin', 'after_otter_activation' );
+		add_action( 'wp_ajax_neve_fse_set_otter_ref', array( $this, 'set_otter_ref' ) );
 	}
 
 	/**
@@ -78,11 +87,12 @@ class Admin {
 			true,
 			array(),
 			array(
-				'nonce'      => wp_create_nonce( 'neve-fse-dismiss-design-pack-notice' ),
-				'ajaxUrl'    => esc_url( admin_url( 'admin-ajax.php' ) ),
-				'ajaxAction' => 'neve_fse_dismiss_design_pack_notice',
-				'buttonLink' => tsdk_utmify( 'https://themeisle.com/plugins/fse-design-pack', 'editor', 'neve-fse' ),
-				'strings'    => array(
+				'nonce'         => wp_create_nonce( 'neve-fse-dismiss-design-pack-notice' ),
+				'otterRefNonce' => wp_create_nonce( 'neve-fse-set-otter-ref' ),
+				'ajaxUrl'       => esc_url( admin_url( 'admin-ajax.php' ) ),
+				'ajaxAction'    => 'neve_fse_dismiss_design_pack_notice',
+				'buttonLink'    => tsdk_utmify( 'https://themeisle.com/plugins/fse-design-pack', 'editor', 'neve-fse' ),
+				'strings'       => array(
 					'dismiss'    => __( 'Dismiss', 'neve-fse' ),
 					'recommends' => __( 'Neve FSE recommends', 'neve-fse' ),
 					'learnMore'  => __( 'Learn More', 'neve-fse' ),
@@ -95,8 +105,6 @@ class Admin {
 			),
 			'designPackNoticeData'
 		);
-
-		echo '<div id="neve-fse-design-pack-notice"></div>';
 	}
 
 	/**
@@ -270,6 +278,14 @@ class Admin {
 						admin_url( 'plugins.php' )
 					)
 				),
+				'onboardingUrl' => esc_url(
+					add_query_arg(
+						array(
+							'onboarding' => 'true',
+						),
+						admin_url( 'site-editor.php' )
+					) 
+				),
 				'activating'    => __( 'Activating', 'neve-fse' ) . '&hellip;',
 				'installing'    => __( 'Installing', 'neve-fse' ) . '&hellip;',
 				'done'          => __( 'Done', 'neve-fse' ),
@@ -421,11 +437,72 @@ class Admin {
 	private function get_otter_status(): string {
 		$status = 'not-installed';
 
+		if ( is_plugin_active( 'otter-blocks/otter-blocks.php' ) ) {
+			return 'active';
+		}
+
 		if ( file_exists( ABSPATH . 'wp-content/plugins/otter-blocks/otter-blocks.php' ) ) {
 			return 'installed';
 		}
 
 		return $status;
+	}
+
+	/**
+	 * Run after Otter Blocks activation.
+	 *
+	 * @param string $plugin Plugin name.
+	 *
+	 * @return void
+	 */
+	public function after_otter_activation( $plugin ) {
+		if ( 'otter-blocks/otter-blocks.php' !== $plugin ) {
+			return;
+		}
+
+		if ( ! class_exists( '\ThemeIsle\GutenbergBlocks\Plugins\FSE_Onboarding' ) ) {
+			return;
+		}
+
+		$status = get_option( \ThemeIsle\GutenbergBlocks\Plugins\FSE_Onboarding::OPTION_KEY, array() );
+		$slug   = get_stylesheet();
+
+		if ( ! empty( $status[ $slug ] ) ) {
+			return;
+		}
+
+		// Dismiss after two days from activation.
+		$activated_time = get_option( 'neve_fse_install' );
+
+		if ( ! empty( $activated_time ) && time() - intval( $activated_time ) > ( 2 * DAY_IN_SECONDS ) ) {
+			update_option( Constants::CACHE_KEYS['dismissed-welcome-notice'], 'yes' );
+			return;
+		}
+
+		$onboarding = add_query_arg(
+			array(
+				'onboarding' => 'true',
+			),
+			admin_url( 'site-editor.php' )
+		);
+
+		wp_safe_redirect( $onboarding );
+		exit;
+	}
+
+	/**
+	 * Update Otter reference key.
+	 *
+	 * @return void
+	 */
+	public function set_otter_ref() {
+		if ( empty( $_POST['nonce'] ) || ! wp_verify_nonce( sanitize_text_field( $_POST['nonce'] ), 'neve-fse-set-otter-ref' ) ) {
+			return;
+		}
+
+		update_option( self::OTTER_REF, 'neve-fse' );
+
+		wp_send_json_success();
 	}
 
 	/**

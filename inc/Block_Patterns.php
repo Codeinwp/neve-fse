@@ -96,6 +96,13 @@ class Block_Patterns {
 			'layout/columns-image-and-text',
 			'layout/portfolio-columns',
 			'layout/columns-image-and-text-inv',
+			'layout/hero-with-feature-columns',
+			'layout/columns-testimonials-inv',
+			'layout/columns-with-services-text',
+			'layout/contact-section',
+			'layout/hero-with-text',
+			'layout/map-section',
+			'layout/faq-section',
 
 			// Post patterns.
 			'loops/post-loop-1',

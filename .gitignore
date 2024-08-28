@@ -13,3 +13,4 @@ assets/js/build
 languages/neve-fse.pot
 
 .DS_Store
+.phpunit.result.cache
