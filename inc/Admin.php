@@ -66,7 +66,7 @@ class Admin {
 
 		add_action( 'enqueue_block_editor_assets', array( $this, 'add_fse_design_pack_notice' ) );
 		add_action( 'wp_ajax_neve_fse_dismiss_design_pack_notice', array( $this, 'remove_design_pack_notice' ) );
-		add_action( 'activated_plugin', 'after_otter_activation' );
+		add_action( 'activated_plugin', array( $this, 'after_otter_activation' ) );
 		add_action( 'wp_ajax_neve_fse_set_otter_ref', array( $this, 'set_otter_ref' ) );
 	}
 
