@@ -67,7 +67,7 @@ function check_php() {
  * @return void
  */
 function define_constants() {
-	define( 'NEVE_FSE_VERSION', '1.1.1' );
+	define( 'NEVE_FSE_VERSION', '1.1.2' );
 	define( 'NEVE_FSE_DEBUG', defined( 'WP_DEBUG' ) && WP_DEBUG === true );
 	define( 'NEVE_FSE_DIR', trailingslashit( get_template_directory() ) );
 	define( 'NEVE_FSE_URL', trailingslashit( get_template_directory_uri() ) );
