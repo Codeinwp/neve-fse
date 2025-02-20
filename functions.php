@@ -71,6 +71,7 @@ function define_constants() {
 	define( 'NEVE_FSE_DEBUG', defined( 'WP_DEBUG' ) && WP_DEBUG === true );
 	define( 'NEVE_FSE_DIR', trailingslashit( get_template_directory() ) );
 	define( 'NEVE_FSE_URL', trailingslashit( get_template_directory_uri() ) );
+	define( 'NEVE_FSE_PRODUCT_SLUG', basename( NEVE_FSE_DIR ) );
 }
 
 /**
