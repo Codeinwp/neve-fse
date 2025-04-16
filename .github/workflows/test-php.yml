@@ -3,17 +3,17 @@ name: Test PHP
 on:
   push:
     branches-ignore:
-      - 'main'
+      - "main"
 
 jobs:
   phplint:
     name: Phplint
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Setup PHP version
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.2'
+          php-version: "7.2"
           extensions: simplexml
       - name: Checkout source code
         uses: actions/checkout@v2
@@ -22,7 +22,7 @@ jobs:
         run: |
           echo "::set-output name=dir::$(composer config cache-files-dir)"
       - name: Setup Composer cache
-        uses: actions/cache@v1
+        uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
@@ -34,7 +34,7 @@ jobs:
         run: composer run lint
   phpunit:
     name: Phpunit
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     services:
       mysql:
         image: mysql:5.7
@@ -47,7 +47,7 @@ jobs:
       - name: Setup PHP version
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.2'
+          php-version: "7.2"
           extensions: simplexml, mysql
           tools: phpunit-polyfills
       - name: Checkout source code
@@ -60,7 +60,7 @@ jobs:
         run: |
           echo "::set-output name=dir::$(composer config cache-files-dir)"
       - name: Setup Composer cache
-        uses: actions/cache@v1
+        uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}

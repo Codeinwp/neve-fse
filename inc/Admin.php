@@ -62,7 +62,7 @@ class Admin {
 		add_action( 'admin_notices', array( $this, 'render_survey_notice' ) );
 		add_action( 'wp_ajax_neve_fse_dismiss_welcome_notice', array( $this, 'remove_welcome_notice' ) );
 		add_action( 'wp_ajax_neve_fse_dismiss_survey_notice', array( $this, 'remove_survey_notice' ) );
-		add_action( 'admin_print_scripts', array( $this, 'add_nps_form' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'register_internal_page' ) );
 
 		add_action( 'enqueue_block_editor_assets', array( $this, 'add_fse_design_pack_notice' ) );
 		add_action( 'wp_ajax_neve_fse_dismiss_design_pack_notice', array( $this, 'remove_design_pack_notice' ) );
@@ -530,26 +530,35 @@ class Admin {
 	}
 
 	/**
-	 * Convert a number to a category.
+	 * Register internal pages.
 	 *
-	 * @param int $number Number to convert.
-	 * @param int $scale  Scale.
-	 *
-	 * @return int
+	 * @return void
 	 */
-	public static function convert_to_category( $number, $scale = 1 ) {
-		$normalized_number = intval( round( $number / $scale ) );
-
-		if ( 0 === $normalized_number || 1 === $normalized_number ) {
-			return 0;
-		} elseif ( $normalized_number > 1 && $normalized_number < 8 ) {
-			return 7;
-		} elseif ( $normalized_number >= 8 && $normalized_number < 31 ) {
-			return 30;
-		} elseif ( $normalized_number > 30 && $normalized_number < 90 ) {
-			return 90;
-		} elseif ( $normalized_number > 90 ) {
-			return 91;
+	public function register_internal_page() {
+		$screen = get_current_screen();
+		
+		if ( ! current_user_can( 'manage_options' ) || ( 'dashboard' !== $screen->id && 'themes' !== $screen->id ) ) {
+			return;
 		}
+		
+		add_filter(
+			'themeisle-sdk/survey/' . NEVE_FSE_PRODUCT_SLUG,
+			function( $data, $page_slug ) {
+				$install_days_number = intval( ( time() - get_option( 'neve_fse_install', time() ) ) / DAY_IN_SECONDS );
+
+				$data = array(
+					'environmentId' => 'clr7hcws7et2g8up0tpz8u8es',
+					'attributes'    => array(
+						'install_days_number' => $install_days_number,
+						'version'             => NEVE_FSE_VERSION,
+					),
+				);
+
+				return $data;
+			},
+			10,
+			2 
+		);
+		do_action( 'themeisle_internal_page', NEVE_FSE_PRODUCT_SLUG, $screen->id );
 	}
 }
