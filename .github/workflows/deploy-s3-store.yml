@@ -1,13 +1,14 @@
 name: Deploy
 
+
 on:
   push:
-    tags:
-      - "*"
+    branches:
+      - main
 jobs:
   deploy:
     name: Deploy to server
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@master
       - name: Setup node 14
@@ -54,4 +55,5 @@ jobs:
         uses: Codeinwp/action-wordpress-theme-deploy@primary
         env:
           SVN_PASSWORD: ${{ secrets.SVN_THEMEISLE_PASSWORD }}
+          VERSION: "1.1.3"
           SVN_USERNAME: ${{ secrets.SVN_THEMEISLE_USERNAME }}
