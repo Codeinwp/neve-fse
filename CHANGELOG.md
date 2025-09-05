@@ -1,3 +1,7 @@
+##### [Version 1.1.5](https://github.com/Codeinwp/neve-fse/compare/v1.1.4...v1.1.5) (2025-09-05)
+
+- Updated dependencies
+
 ##### [Version 1.1.4](https://github.com/Codeinwp/neve-fse/compare/v1.1.3...v1.1.4) (2025-05-27)
 
 - Updated dependencies
