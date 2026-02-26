@@ -37,8 +37,6 @@ class Block_Patterns {
 	 * Block_Patterns constructor.
 	 */
 	public function __construct() {
-		$this->setup_properties();
-
 		add_action( 'init', array( $this, 'run' ) );
 	}
 
@@ -48,6 +46,7 @@ class Block_Patterns {
 	 * @return void
 	 */
 	public function run() {
+		$this->setup_properties();
 		$this->register_categories();
 		$this->register_patterns();
 	}
