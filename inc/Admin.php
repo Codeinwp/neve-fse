@@ -573,11 +573,9 @@ class Admin {
 	public function add_black_friday_data( $configs ) {
 		$config = $configs['default'];
 
-		// translators: %1$s - plugin namce, %2$s - HTML tag, %3$s - discount, %4$s - HTML tag, %5$s - company name.
-		$message_template = __( 'Enhance %1$s with %2$s– up to %3$s OFF in our biggest sale of the year. Limited time only.', 'neve-fse' );
-
 		$config['dismiss']  = true; // Note: Allow dismiss since it appears on `/wp-admin`.
-		$config['message']  = sprintf( $message_template, 'Neve FSE', 'Otter Blocks Pro', '70%' );
+		$config['message']  = __( 'You use Neve FSE. Otter Pro adds advanced blocks, custom CSS, and WooCommerce integration to your site. Built by the same team.', 'neve-fse' );
+		$config['cta_label'] = __( 'Get Otter Pro free', 'neve-fse' );
 		$config['sale_url'] = add_query_arg(
 			array(
 				'utm_term' => 'free',
