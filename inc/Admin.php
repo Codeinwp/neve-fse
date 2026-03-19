@@ -573,10 +573,10 @@ class Admin {
 	public function add_black_friday_data( $configs ) {
 		$config = $configs['default'];
 
-		$config['dismiss']  = true; // Note: Allow dismiss since it appears on `/wp-admin`.
-		$config['message']  = __( 'You use Neve FSE. Otter Pro adds advanced blocks, custom CSS, and WooCommerce integration to your site. Built by the same team.', 'neve-fse' );
+		$config['dismiss']   = true; // Note: Allow dismiss since it appears on `/wp-admin`.
+		$config['message']   = __( 'You use Neve FSE. Otter Pro adds advanced blocks, custom CSS, and WooCommerce integration to your site. Built by the same team.', 'neve-fse' );
 		$config['cta_label'] = __( 'Get Otter Pro free', 'neve-fse' );
-		$config['sale_url'] = add_query_arg(
+		$config['sale_url']  = add_query_arg(
 			array(
 				'utm_term' => 'free',
 			),
