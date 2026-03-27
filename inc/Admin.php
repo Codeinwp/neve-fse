@@ -285,7 +285,7 @@ class Admin {
 							'onboarding' => 'true',
 						),
 						admin_url( 'site-editor.php' )
-					) 
+					)
 				),
 				'activating'    => __( 'Activating', 'neve-fse' ) . '&hellip;',
 				'installing'    => __( 'Installing', 'neve-fse' ) . '&hellip;',
@@ -537,11 +537,11 @@ class Admin {
 	 */
 	public function register_internal_page() {
 		$screen = get_current_screen();
-		
+
 		if ( ! current_user_can( 'manage_options' ) || ( 'dashboard' !== $screen->id && 'themes' !== $screen->id ) ) {
 			return;
 		}
-		
+
 		add_filter(
 			'themeisle-sdk/survey/' . NEVE_FSE_PRODUCT_SLUG,
 			function( $data, $page_slug ) {
@@ -558,7 +558,7 @@ class Admin {
 				return $data;
 			},
 			10,
-			2 
+			2
 		);
 		do_action( 'themeisle_internal_page', NEVE_FSE_PRODUCT_SLUG, $screen->id );
 	}
@@ -573,14 +573,15 @@ class Admin {
 	public function add_black_friday_data( $configs ) {
 		$config = $configs['default'];
 
-		$config['dismiss']   = true; // Note: Allow dismiss since it appears on `/wp-admin`.
-		$config['message']   = __( 'You use Neve FSE. Otter Pro adds advanced blocks, custom CSS, and WooCommerce integration to your site. Built by the same team.', 'neve-fse' );
+		$config['dismiss'] = true; // Note: Allow dismiss since it appears on `/wp-admin`.
+		// translators: 1. Number of free licenses, 2. The price of the product.
+		$config['message']   = sprintf( __( 'You’re using Neve FSE, and the team behind it is celebrating Black Friday by giving away %1$s licences of Otter Pro. A powerful block collection worth %2$s, with advanced blocks, custom CSS, animations, and WooCommerce integration. Claim yours before they run out.', 'neve-fse' ), 100, '$69' );
 		$config['cta_label'] = __( 'Get Otter Pro free', 'neve-fse' );
 		$config['sale_url']  = add_query_arg(
 			array(
 				'utm_term' => 'free',
 			),
-			tsdk_translate_link( tsdk_utmify( 'https://themeisle.link/otter-bf', 'bfcm', 'neve-fse' ) )
+			tsdk_translate_link( tsdk_utmify( 'https://themeisle.link/otter-claim-bf', 'bfcm', 'neve-fse' ) )
 		);
 
 		$configs[ NEVE_FSE_PRODUCT_SLUG ] = $config;
