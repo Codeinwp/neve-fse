@@ -1,6 +1,6 @@
 // https://github.com/gruntjs/grunt-contrib-sass
 
-const sass = require('node-sass');
+const sass = require('sass');
 
 const options = {
     implementation: sass,
