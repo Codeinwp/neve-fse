@@ -1,3 +1,7 @@
+##### [Version 1.1.7](https://github.com/Codeinwp/neve-fse/compare/v1.1.6...v1.1.7) (2026-03-31)
+
+- Updated dependencies
+
 ##### [Version 1.1.6](https://github.com/Codeinwp/neve-fse/compare/v1.1.5...v1.1.6) (2026-03-12)
 
 - Fixed load textdomain issue with WP 6.7
