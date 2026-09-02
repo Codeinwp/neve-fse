@@ -47,7 +47,7 @@ jobs:
 
   comment-on-pr:
     name: Comment on PR with links to plugin ZIPs
-    if: ${{ github.head_ref && github.head_ref != null && github.actor != 'dependabot[bot]' }}
+    if: ${{ github.head_ref && github.head_ref != null }}
     runs-on: ubuntu-latest
     needs: dev-zip
     env:
@@ -65,8 +65,9 @@ jobs:
         id: find-comment
         uses: peter-evans/find-comment@v1
         with:
+          token: ${{ secrets.BOT_TOKEN }}
           issue-number: ${{ steps.get-pr-number.outputs.num }}
-          comment-author: github-actions[bot]
+          comment-author: pirate-bot
           body-includes: Download NeveFSE
 
       - name: Get comment body
@@ -80,6 +81,7 @@ jobs:
         if: ${{ steps.find-comment.outputs.comment-id == '' }}
         uses: peter-evans/create-or-update-comment@v1
         with:
+          token: ${{ secrets.BOT_TOKEN }}
           issue-number: ${{ steps.get-pr-number.outputs.num }}
           body: ${{ steps.get-comment-body.outputs.body }}
 
@@ -87,6 +89,7 @@ jobs:
         if: ${{ steps.find-comment.outputs.comment-id != '' }}
         uses: peter-evans/create-or-update-comment@v1
         with:
+          token: ${{ secrets.BOT_TOKEN }}
           comment-id: ${{ steps.find-comment.outputs.comment-id }}
           edit-mode: replace
           body: ${{ steps.get-comment-body.outputs.body }}
