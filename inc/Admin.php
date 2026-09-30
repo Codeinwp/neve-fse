@@ -69,6 +69,7 @@ class Admin {
 		add_action( 'activated_plugin', array( $this, 'after_otter_activation' ) );
 		add_action( 'wp_ajax_neve_fse_set_otter_ref', array( $this, 'set_otter_ref' ) );
 		add_filter( 'themeisle_sdk_blackfriday_data', array( $this, 'add_black_friday_data' ), 20 );
+		add_filter( 'neve_fse_ai_connect_metadata', array( $this, 'get_ai_connect_metadata' ) );
 	}
 
 	/**
@@ -587,5 +588,26 @@ class Admin {
 		$configs[ NEVE_FSE_PRODUCT_SLUG ] = $config;
 
 		return $configs;
+	}
+
+	/**
+	 * Get the data for the SDK "Connect your AI agent" module.
+	 *
+	 * @return array<string, string|string[]>
+	 */
+	public function get_ai_connect_metadata() {
+		return array(
+			'name'         => 'Neve FSE',
+			'notice_cases' => array(
+				__( 'switch your site\'s style', 'neve-fse' ),
+				__( 'rearrange your header', 'neve-fse' ),
+				__( 'drop a ready-made section into any page', 'neve-fse' ),
+			),
+			'prompts'      => array(
+				__( 'Switch my site to the Neve FSE style variation with the dark palette.', 'neve-fse' ),
+				__( 'Put the site logo on the left of my header and the navigation on the right.', 'neve-fse' ),
+				__( 'Add a testimonials pattern from my theme to the bottom of the About page.', 'neve-fse' ),
+			),
+		);
 	}
 }

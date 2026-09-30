@@ -34,7 +34,7 @@
         "installer-disable": "true"
     },
     "require": {
-        "codeinwp/themeisle-sdk": "^3.3"
+        "codeinwp/themeisle-sdk": "^3.3.65"
     },
     "require-dev": {
         "codeinwp/phpcs-ruleset": "dev-main",
