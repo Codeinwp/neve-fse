@@ -16,6 +16,15 @@ Neve FSE is distributed under the terms of the GNU GPLv2 or later
 
 == Changelog ==
 
+##### [Version 1.1.8](https://github.com/Codeinwp/neve-fse/compare/v1.1.7...v1.1.8) (2026-09-30)
+
+- Fixed large gaps between centered author avatars and author details.
+- Updated dependencies
+- Added AI agent support: connect your AI assistant and ask it to edit your sites header, footer and style.
+
+
+
+
 ##### [Version 1.1.7](https://github.com/Codeinwp/neve-fse/compare/v1.1.6...v1.1.7) (2026-03-31)
 
 - Updated dependencies
