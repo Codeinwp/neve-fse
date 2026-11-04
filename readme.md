@@ -16,6 +16,13 @@ Neve FSE is distributed under the terms of the GNU GPLv2 or later
 
 ## Changelog ##
 
+##### [Version 1.1.9](https://github.com/Codeinwp/neve-fse/compare/v1.1.8...v1.1.9) (2026-11-04)
+
+- Updated dependencies
+
+
+
+
 ##### [Version 1.1.8](https://github.com/Codeinwp/neve-fse/compare/v1.1.7...v1.1.8) (2026-09-30)
 
 - Fixed large gaps between centered author avatars and author details.
