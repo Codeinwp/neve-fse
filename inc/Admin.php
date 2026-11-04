@@ -574,6 +574,10 @@ class Admin {
 	public function add_black_friday_data( $configs ) {
 		$config = $configs['default'];
 
+		if ( defined( 'OTTER_BLOCKS_VERSION' ) || defined( 'OTTER_PRO_VERSION' ) ) {
+			return $configs;
+		}
+
 		$config['dismiss'] = true; // Note: Allow dismiss since it appears on `/wp-admin`.
 		// translators: 1. Number of free licenses, 2. The price of the product.
 		$config['message']   = sprintf( __( 'You’re using Neve FSE, and the team behind it is celebrating Black Friday by giving away %1$s licences of Otter Pro. A powerful block collection worth %2$s, with advanced blocks, custom CSS, animations, and WooCommerce integration. Claim yours before they run out.', 'neve-fse' ), 100, '$69' );
